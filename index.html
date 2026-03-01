@@ -121,13 +121,32 @@ button:hover {
     background-color: #b85584;
 }
 
-/* ===== SECCIONES ===== */
+/* ===== CAJAS ===== */
 .box {
     background: white;
     padding: 40px;
     border-radius: 20px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     text-align: center;
+}
+
+/* ===== BOTÓN FLOTANTE WHATSAPP ===== */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
 }
 
 /* ===== FOOTER ===== */
@@ -183,10 +202,7 @@ footer {
 <!-- INICIO -->
 <section id="inicio">
     <h1>Brilla mientras entrenas ✨</h1>
-    <p>
-        Ropa deportiva femenina diseñada para realzar tu energía,
-        tu fuerza y tu confianza 💖
-    </p>
+    <p>Ropa deportiva femenina diseñada para realzar tu energía y confianza 💖</p>
 </section>
 
 <!-- PRODUCTOS -->
@@ -199,7 +215,7 @@ footer {
             <img src="https://images.unsplash.com/photo-1599058917765-a780eda07a3e" alt="Legging">
             <h3>Legging Glow Sculpt</h3>
             <p>₡18,000</p>
-            <a href="https://wa.me/50600000000?text=Hola%20quiero%20el%20Legging%20Glow%20Sculpt">
+            <a href="https://wa.me/50660866716?text=Hola%20quiero%20el%20Legging%20Glow%20Sculpt" target="_blank">
                 <button>Comprar</button>
             </a>
         </div>
@@ -208,7 +224,7 @@ footer {
             <img src="https://images.unsplash.com/photo-1594737625785-cb9b6c47b9c1" alt="Top">
             <h3>Top Soft Energy</h3>
             <p>₡12,000</p>
-            <a href="https://wa.me/50600000000?text=Hola%20quiero%20el%20Top%20Soft%20Energy">
+            <a href="https://wa.me/50660866716?text=Hola%20quiero%20el%20Top%20Soft%20Energy" target="_blank">
                 <button>Comprar</button>
             </a>
         </div>
@@ -217,7 +233,7 @@ footer {
             <img src="https://images.unsplash.com/photo-1584865288642-42078afe6942" alt="Set">
             <h3>Set Power Shine</h3>
             <p>₡28,000</p>
-            <a href="https://wa.me/50600000000?text=Hola%20quiero%20el%20Set%20Power%20Shine">
+            <a href="https://wa.me/50660866716?text=Hola%20quiero%20el%20Set%20Power%20Shine" target="_blank">
                 <button>Comprar</button>
             </a>
         </div>
@@ -229,10 +245,7 @@ footer {
 <section id="nosotras">
     <div class="box">
         <h1 style="color:#d36c9c;">Nosotras ✨</h1>
-        <p>
-            STep FIT nace para mujeres fuertes, suaves y determinadas.
-            Creemos en el movimiento con elegancia y confianza.
-        </p>
+        <p>STep FIT nace para mujeres fuertes, elegantes y decididas.</p>
     </div>
 </section>
 
@@ -241,7 +254,7 @@ footer {
     <div class="box">
         <h1 style="color:#d36c9c;">Contacto 💌</h1>
         <p>Haz tu pedido directamente por WhatsApp.</p>
-        <a href="https://wa.me/50600000000">
+        <a href="https://wa.me/50660866716?text=Hola%20quiero%20informacion%20de%20STep%20FIT" target="_blank">
             <button>Escribir ahora</button>
         </a>
     </div>
@@ -252,6 +265,13 @@ footer {
 </footer>
 
 </div>
+
+<!-- BOTÓN FLOTANTE -->
+<a href="https://wa.me/50660866716?text=Hola%20quiero%20informacion%20de%20STep%20FIT"
+   class="whatsapp-float"
+   target="_blank">
+   WhatsApp
+</a>
 
 </body>
 </html>
