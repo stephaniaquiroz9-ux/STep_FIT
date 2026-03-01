@@ -2,18 +2,19 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>STep FIT</title>
 
 <style>
 
-/* ===== ESTILO GENERAL ===== */
+/* ===== GENERAL ===== */
 html {
     scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     background-color: #fff5f7;
 }
 
@@ -49,13 +50,12 @@ body {
     color: #d36c9c;
 }
 
-/* ===== CONTENIDO ===== */
+/* ===== CONTENT ===== */
 .content {
     margin-left: 250px;
     padding: 60px;
 }
 
-/* ===== SECCIONES ===== */
 section {
     margin-bottom: 100px;
 }
@@ -71,12 +71,7 @@ section {
 
 #inicio h1 {
     color: #d36c9c;
-    font-size: 40px;
-}
-
-#inicio p {
-    color: #555;
-    font-size: 18px;
+    font-size: 38px;
 }
 
 /* ===== PRODUCTOS ===== */
@@ -89,7 +84,7 @@ section {
 
 .card {
     background: white;
-    padding: 25px;
+    padding: 20px;
     width: 280px;
     border-radius: 20px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.08);
@@ -98,13 +93,20 @@ section {
 }
 
 .card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-10px);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 15px;
 }
 
 .card h3 {
     color: #d36c9c;
 }
 
+/* ===== BOTONES ===== */
 button {
     background-color: #d36c9c;
     color: white;
@@ -119,17 +121,8 @@ button:hover {
     background-color: #b85584;
 }
 
-/* ===== NOSOTRAS ===== */
-#nosotras {
-    background: white;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    text-align: center;
-}
-
-/* ===== CONTACTO ===== */
-#contacto {
+/* ===== SECCIONES ===== */
+.box {
     background: white;
     padding: 40px;
     border-radius: 20px;
@@ -144,12 +137,39 @@ footer {
     color: #777;
 }
 
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-around;
+        padding: 15px 0;
+    }
+
+    .sidebar h2 {
+        display: none;
+    }
+
+    .content {
+        margin-left: 0;
+        padding: 30px;
+    }
+
+    .productos-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- ===== SIDEBAR ===== -->
+<!-- SIDEBAR -->
 <div class="sidebar">
     <h2>STep FIT ✨</h2>
     <a href="#inicio">Inicio</a>
@@ -158,69 +178,78 @@ footer {
     <a href="#contacto">Contacto</a>
 </div>
 
-<!-- ===== CONTENIDO ===== -->
 <div class="content">
 
-    <!-- INICIO -->
-    <section id="inicio">
-        <h1>Brilla mientras entrenas ✨</h1>
-        <p>
-            En STep FIT creemos que cada mujer merece entrenar con estilo,
-            comodidad y confianza.
-        </p>
-        <p>
-            Diseñamos ropa deportiva que realza tu energía,
-            tu fuerza y tu brillo propio 💖
-        </p>
-    </section>
+<!-- INICIO -->
+<section id="inicio">
+    <h1>Brilla mientras entrenas ✨</h1>
+    <p>
+        Ropa deportiva femenina diseñada para realzar tu energía,
+        tu fuerza y tu confianza 💖
+    </p>
+</section>
 
-    <!-- PRODUCTOS -->
-    <section id="productos">
-        <h1 style="text-align:center; color:#d36c9c;">Nuestros Productos 💖</h1>
+<!-- PRODUCTOS -->
+<section id="productos">
+    <h1 style="text-align:center; color:#d36c9c;">Nuestros Productos 💖</h1>
 
-        <div class="productos-grid">
+    <div class="productos-grid">
 
-            <div class="card">
-                <h3>Legging Glow Sculpt</h3>
-                <p>₡18,000</p>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1599058917765-a780eda07a3e" alt="Legging">
+            <h3>Legging Glow Sculpt</h3>
+            <p>₡18,000</p>
+            <a href="https://wa.me/50600000000?text=Hola%20quiero%20el%20Legging%20Glow%20Sculpt">
                 <button>Comprar</button>
-            </div>
-
-            <div class="card">
-                <h3>Top Soft Energy</h3>
-                <p>₡12,000</p>
-                <button>Comprar</button>
-            </div>
-
-            <div class="card">
-                <h3>Set Power Shine</h3>
-                <p>₡28,000</p>
-                <button>Comprar</button>
-            </div>
-
+            </a>
         </div>
-    </section>
 
-    <!-- NOSOTRAS -->
-    <section id="nosotras">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1594737625785-cb9b6c47b9c1" alt="Top">
+            <h3>Top Soft Energy</h3>
+            <p>₡12,000</p>
+            <a href="https://wa.me/50600000000?text=Hola%20quiero%20el%20Top%20Soft%20Energy">
+                <button>Comprar</button>
+            </a>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1584865288642-42078afe6942" alt="Set">
+            <h3>Set Power Shine</h3>
+            <p>₡28,000</p>
+            <a href="https://wa.me/50600000000?text=Hola%20quiero%20el%20Set%20Power%20Shine">
+                <button>Comprar</button>
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- NOSOTRAS -->
+<section id="nosotras">
+    <div class="box">
         <h1 style="color:#d36c9c;">Nosotras ✨</h1>
         <p>
             STep FIT nace para mujeres fuertes, suaves y determinadas.
-            Creemos en el movimiento con elegancia y en entrenar
-            con seguridad y confianza.
+            Creemos en el movimiento con elegancia y confianza.
         </p>
-    </section>
+    </div>
+</section>
 
-    <!-- CONTACTO -->
-    <section id="contacto">
+<!-- CONTACTO -->
+<section id="contacto">
+    <div class="box">
         <h1 style="color:#d36c9c;">Contacto 💌</h1>
-        <p>Haz tu pedido por WhatsApp o escríbenos en Instagram.</p>
-        <button>Escribir ahora</button>
-    </section>
+        <p>Haz tu pedido directamente por WhatsApp.</p>
+        <a href="https://wa.me/50600000000">
+            <button>Escribir ahora</button>
+        </a>
+    </div>
+</section>
 
-    <footer>
-        © 2026 STep FIT | Diseñado con 💖
-    </footer>
+<footer>
+    © 2026 STep FIT | Diseñado con 💖
+</footer>
 
 </div>
 
