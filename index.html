@@ -13,10 +13,10 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-/* BODY Y FONDO */
+/* FONDO TOTAL ROJO */
 body{
-    background:#f9f5f5;
-    color:#333;
+    background:#800020;
+    color:white;
 }
 
 /* SIDEBAR */
@@ -26,7 +26,7 @@ body{
     top:0;
     width:180px;
     height:100vh;
-    background:#800020;
+    background:#660018;
     padding:20px 15px;
     display:flex;
     flex-direction: column;
@@ -81,7 +81,7 @@ body{
     position:absolute;
     top:0; left:0;
     width:100%; height:100%;
-    background: rgba(0,0,0,0.4);
+    background: rgba(128,0,32,0.5); /* oscurecer el fondo rojo */
     border-radius:15px;
 }
 
@@ -126,7 +126,7 @@ body{
     font-size:32px;
     margin-bottom:40px;
     text-align:center;
-    color:#800020;
+    color:#ffccd5;
 }
 
 .cards{
@@ -136,11 +136,12 @@ body{
 }
 
 .card{
-    background:white;
+    background:#ffccd5;
+    color:#800020;
     border-radius:15px;
     padding:20px;
     text-align:center;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
     transition: 0.4s;
     transform: translateY(20px);
     opacity:0;
@@ -156,17 +157,15 @@ body{
 
 .card:hover{
     transform: translateY(-10px) scale(1.05);
-    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
 }
 
 .card h3{
     margin-bottom:10px;
-    color:#800020;
 }
 
 .card p{
     font-size:14px;
-    color:#555;
 }
 
 /* ANIMACION */
@@ -182,8 +181,58 @@ footer{
     text-align:center;
     margin-top:60px;
     padding:20px 0;
-    color:#aaa;
+    color:#ffccd5;
     font-size:14px;
+}
+
+/* BOTON DE WHATSAPP PREMIUM */
+.whatsapp-btn{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width:60px;
+    height:60px;
+    background:#25D366;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    z-index:1000;
+    cursor:pointer;
+}
+
+.whatsapp-btn img{
+    width:30px;
+    height:30px;
+}
+
+/* Tooltip */
+.whatsapp-tooltip{
+    position: absolute;
+    right: 70px;
+    background: #ffccd5;
+    color: #800020;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight:600;
+    font-size:14px;
+    opacity:0;
+    white-space: nowrap;
+    pointer-events: none;
+    transform: translateX(10px);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.whatsapp-btn:hover{
+    transform: scale(1.1);
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+.whatsapp-btn:hover .whatsapp-tooltip{
+    opacity:1;
+    transform: translateX(0);
 }
 
 /* RESPONSIVE */
@@ -212,6 +261,7 @@ footer{
 
 <body>
 
+<!-- SIDEBAR -->
 <div class="sidebar">
     <img src="logo.png" alt="STep FIT">
     <ul class="menu">
@@ -222,49 +272,58 @@ footer{
     </ul>
 </div>
 
+<!-- MAIN -->
 <div class="main">
 
-<section class="hero">
-    <h1>Ropa Deportiva Femenina</h1>
-    <p>Elegancia • Fuerza • Confianza</p>
-    <a href="#" class="btn">Ver Colección</a>
-</section>
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Ropa Deportiva Femenina</h1>
+        <p>Elegancia • Fuerza • Confianza</p>
+        <a href="#" class="btn">Ver Colección</a>
+    </section>
 
-<section class="productos">
-    <h2>Nuestra Colección</h2>
-    <div class="cards">
-        <div class="card">
-            <h3>Leggings Premium</h3>
-            <p>Moldean tu figura con comodidad total.</p>
+    <!-- PRODUCTOS -->
+    <section class="productos">
+        <h2>Nuestra Colección</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Leggings Premium</h3>
+                <p>Moldean tu figura con comodidad total.</p>
+            </div>
+            <div class="card">
+                <h3>Tops Deportivos</h3>
+                <p>Soporte perfecto y diseño elegante.</p>
+            </div>
+            <div class="card">
+                <h3>Conjuntos Fitness</h3>
+                <p>Estilo completo para entrenar con poder.</p>
+            </div>
+            <div class="card">
+                <h3>Bra Sport Luxe</h3>
+                <p>Comodidad y soporte premium.</p>
+            </div>
+            <div class="card">
+                <h3>Sudaderas Fit</h3>
+                <p>Perfectas para antes y después del entrenamiento.</p>
+            </div>
+            <div class="card">
+                <h3>Shorts Active</h3>
+                <p>Ligeros y versátiles para todo tipo de ejercicios.</p>
+            </div>
         </div>
-        <div class="card">
-            <h3>Tops Deportivos</h3>
-            <p>Soporte perfecto y diseño elegante.</p>
-        </div>
-        <div class="card">
-            <h3>Conjuntos Fitness</h3>
-            <p>Estilo completo para entrenar con poder.</p>
-        </div>
-        <div class="card">
-            <h3>Bra Sport Luxe</h3>
-            <p>Comodidad y soporte premium.</p>
-        </div>
-        <div class="card">
-            <h3>Sudaderas Fit</h3>
-            <p>Perfectas para antes y después del entrenamiento.</p>
-        </div>
-        <div class="card">
-            <h3>Shorts Active</h3>
-            <p>Ligeros y versátiles para todo tipo de ejercicios.</p>
-        </div>
-    </div>
-</section>
+    </section>
 
-<footer>
-    © 2026 STep FIT | Todos los derechos reservados
-</footer>
+    <footer>
+        © 2026 STep FIT | Todos los derechos reservados
+    </footer>
 
 </div>
+
+<!-- BOTÓN DE WHATSAPP -->
+<a href="https://wa.me/50660866716" target="_blank" class="whatsapp-btn">
+    <img src="whatsapp-icon.png" alt="WhatsApp">
+    <span class="whatsapp-tooltip">¡Escríbeme por WhatsApp!</span>
+</a>
 
 </body>
 </html>
