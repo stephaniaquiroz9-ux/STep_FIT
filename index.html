@@ -3,61 +3,267 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Colección | STep FIT</title>
-<link rel="stylesheet" href="style.css">
+<title>STep FIT</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* BODY Y FONDO */
+body{
+    background:#f9f5f5;
+    color:#333;
+}
+
+/* SIDEBAR */
+.sidebar{
+    position: fixed;
+    left:0;
+    top:0;
+    width:180px;
+    height:100vh;
+    background:#800020;
+    padding:20px 15px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar img{
+    width:120px;
+    margin-bottom:40px;
+}
+
+.menu{
+    list-style:none;
+    width:100%;
+    text-align:center;
+}
+
+.menu li{
+    margin:20px 0;
+}
+
+.menu a{
+    text-decoration:none;
+    color:white;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.menu a:hover{
+    color:#ffccd5;
+}
+
+/* MAIN */
+.main{
+    margin-left:180px;
+    padding:40px;
+}
+
+/* HERO */
+.hero{
+    background: url('hero.jpg') center/cover no-repeat;
+    border-radius:15px;
+    padding:80px 40px;
+    color:white;
+    text-align:center;
+    position: relative;
+    overflow:hidden;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: rgba(0,0,0,0.4);
+    border-radius:15px;
+}
+
+.hero h1{
+    font-size:48px;
+    font-weight:700;
+    position: relative;
+    z-index:1;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:22px;
+    margin-bottom:30px;
+    position: relative;
+    z-index:1;
+}
+
+.btn{
+    background:#ffccd5;
+    color:#800020;
+    padding:15px 35px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:700;
+    transition:0.3s;
+    position: relative;
+    z-index:1;
+}
+
+.btn:hover{
+    background:#fff;
+    transform:scale(1.05);
+}
+
+/* PRODUCTOS */
+.productos{
+    margin-top:60px;
+}
+
+.productos h2{
+    font-size:32px;
+    margin-bottom:40px;
+    text-align:center;
+    color:#800020;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.4s;
+    transform: translateY(20px);
+    opacity:0;
+    animation:fadeInUp 0.6s forwards;
+}
+
+.card:nth-child(1){animation-delay:0.1s;}
+.card:nth-child(2){animation-delay:0.2s;}
+.card:nth-child(3){animation-delay:0.3s;}
+.card:nth-child(4){animation-delay:0.4s;}
+.card:nth-child(5){animation-delay:0.5s;}
+.card:nth-child(6){animation-delay:0.6s;}
+
+.card:hover{
+    transform: translateY(-10px) scale(1.05);
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.card h3{
+    margin-bottom:10px;
+    color:#800020;
+}
+
+.card p{
+    font-size:14px;
+    color:#555;
+}
+
+/* ANIMACION */
+@keyframes fadeInUp{
+    to{
+        transform: translateY(0);
+        opacity:1;
+    }
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    margin-top:60px;
+    padding:20px 0;
+    color:#aaa;
+    font-size:14px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .sidebar{
+        width:60px;
+        padding:20px 5px;
+    }
+    .sidebar img{
+        width:40px;
+        margin-bottom:20px;
+    }
+    .main{
+        margin-left:60px;
+        padding:20px;
+    }
+    .hero h1{
+        font-size:32px;
+    }
+    .hero p{
+        font-size:18px;
+    }
+}
+</style>
 </head>
 
 <body>
 
 <div class="sidebar">
-    <div class="logo">
-        <img src="logo.png" alt="STep FIT">
-    </div>
-
+    <img src="logo.png" alt="STep FIT">
     <ul class="menu">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="coleccion.html">Colección</a></li>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Colección</a></li>
         <li><a href="#">Nosotras</a></li>
         <li><a href="#">Contacto</a></li>
     </ul>
 </div>
 
 <div class="main">
-    <section class="productos">
-        <h2>Nuestra Colección Completa</h2>
 
-        <div class="cards">
-            <div class="card">
-                <h3>Leggings Premium</h3>
-                <p>Moldean tu figura con comodidad total.</p>
-            </div>
+<section class="hero">
+    <h1>Ropa Deportiva Femenina</h1>
+    <p>Elegancia • Fuerza • Confianza</p>
+    <a href="#" class="btn">Ver Colección</a>
+</section>
 
-            <div class="card">
-                <h3>Tops Deportivos</h3>
-                <p>Soporte perfecto y diseño elegante.</p>
-            </div>
-
-            <div class="card">
-                <h3>Conjuntos Fitness</h3>
-                <p>Estilo completo para entrenar con poder.</p>
-            </div>
-
-            <div class="card">
-                <h3>Bra Sport Luxe</h3>
-                <p>Comodidad y soporte premium.</p>
-            </div>
-
-            <div class="card">
-                <h3>Sudaderas Fit</h3>
-                <p>Perfectas para antes y después del entrenamiento.</p>
-            </div>
-
-            <div class="card">
-                <h3>Shorts Active</h3>
-                <p>Ligeros y versátiles para todo tipo de ejercicios.</p>
-            </div>
+<section class="productos">
+    <h2>Nuestra Colección</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Leggings Premium</h3>
+            <p>Moldean tu figura con comodidad total.</p>
         </div>
-    </section>
+        <div class="card">
+            <h3>Tops Deportivos</h3>
+            <p>Soporte perfecto y diseño elegante.</p>
+        </div>
+        <div class="card">
+            <h3>Conjuntos Fitness</h3>
+            <p>Estilo completo para entrenar con poder.</p>
+        </div>
+        <div class="card">
+            <h3>Bra Sport Luxe</h3>
+            <p>Comodidad y soporte premium.</p>
+        </div>
+        <div class="card">
+            <h3>Sudaderas Fit</h3>
+            <p>Perfectas para antes y después del entrenamiento.</p>
+        </div>
+        <div class="card">
+            <h3>Shorts Active</h3>
+            <p>Ligeros y versátiles para todo tipo de ejercicios.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2026 STep FIT | Todos los derechos reservados
+</footer>
+
 </div>
 
 </body>
