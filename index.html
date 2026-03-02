@@ -3,185 +3,62 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>STep FIT</title>
-
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: 'Segoe UI', sans-serif;
-}
-
-body{
-    background-color:#f8f8f8;
-}
-
-/* HEADER */
-header{
-    background:#800020;
-    padding:20px;
-    text-align:center;
-}
-
-.logo img{
-    width:170px;
-}
-
-/* HERO */
-.hero{
-    background:linear-gradient(to right, #800020, #a0002a);
-    color:white;
-    text-align:center;
-    padding:100px 20px;
-}
-
-.hero h1{
-    font-size:48px;
-    margin-bottom:20px;
-}
-
-.hero p{
-    font-size:20px;
-    margin-bottom:30px;
-}
-
-.btn{
-    background:white;
-    color:#800020;
-    padding:15px 35px;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:bold;
-    transition:0.3s;
-}
-
-.btn:hover{
-    background:#f1f1f1;
-    transform:scale(1.05);
-}
-
-/* PRODUCTOS */
-.productos{
-    padding:80px 20px;
-    text-align:center;
-}
-
-.productos h2{
-    color:#800020;
-    margin-bottom:50px;
-    font-size:35px;
-}
-
-.cards{
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    flex-wrap:wrap;
-}
-
-.card{
-    background:white;
-    width:280px;
-    padding:30px;
-    border-radius:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.1);
-    transition:0.3s;
-}
-
-.card:hover{
-    transform:translateY(-10px);
-}
-
-.card h3{
-    color:#800020;
-    margin-bottom:15px;
-}
-
-/* NOSOTRAS */
-.nosotras{
-    background:#800020;
-    color:white;
-    padding:80px 20px;
-    text-align:center;
-}
-
-.nosotras h2{
-    font-size:35px;
-    margin-bottom:20px;
-}
-
-/* CONTACTO */
-.contacto{
-    padding:80px 20px;
-    text-align:center;
-}
-
-.contacto h2{
-    color:#800020;
-    margin-bottom:20px;
-}
-
-footer{
-    background:#800020;
-    color:white;
-    text-align:center;
-    padding:20px;
-}
-</style>
+<title>Colección | STep FIT</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
+<div class="sidebar">
     <div class="logo">
         <img src="logo.png" alt="STep FIT">
     </div>
-</header>
 
-<section class="hero">
-    <h1>Ropa Deportiva Femenina</h1>
-    <p>Elegancia • Fuerza • Confianza</p>
-    <a href="#" class="btn">Ver Colección</a>
-</section>
+    <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="coleccion.html">Colección</a></li>
+        <li><a href="#">Nosotras</a></li>
+        <li><a href="#">Contacto</a></li>
+    </ul>
+</div>
 
-<section class="productos">
-    <h2>Nuestra Colección</h2>
-    <div class="cards">
+<div class="main">
+    <section class="productos">
+        <h2>Nuestra Colección Completa</h2>
 
-        <div class="card">
-            <h3>Leggings Premium</h3>
-            <p>Moldean tu figura con comodidad total.</p>
+        <div class="cards">
+            <div class="card">
+                <h3>Leggings Premium</h3>
+                <p>Moldean tu figura con comodidad total.</p>
+            </div>
+
+            <div class="card">
+                <h3>Tops Deportivos</h3>
+                <p>Soporte perfecto y diseño elegante.</p>
+            </div>
+
+            <div class="card">
+                <h3>Conjuntos Fitness</h3>
+                <p>Estilo completo para entrenar con poder.</p>
+            </div>
+
+            <div class="card">
+                <h3>Bra Sport Luxe</h3>
+                <p>Comodidad y soporte premium.</p>
+            </div>
+
+            <div class="card">
+                <h3>Sudaderas Fit</h3>
+                <p>Perfectas para antes y después del entrenamiento.</p>
+            </div>
+
+            <div class="card">
+                <h3>Shorts Active</h3>
+                <p>Ligeros y versátiles para todo tipo de ejercicios.</p>
+            </div>
         </div>
-
-        <div class="card">
-            <h3>Tops Deportivos</h3>
-            <p>Soporte perfecto y diseño elegante.</p>
-        </div>
-
-        <div class="card">
-            <h3>Conjuntos Fitness</h3>
-            <p>Estilo completo para entrenar con poder.</p>
-        </div>
-
-    </div>
-</section>
-
-<section class="nosotras">
-    <h2>Sobre STep FIT</h2>
-    <p>Somos una marca creada para mujeres fuertes, elegantes y seguras.
-    Diseñamos ropa deportiva que combina rendimiento y estilo.</p>
-</section>
-
-<section class="contacto">
-    <h2>Contacto</h2>
-    <p>Email: contacto@stepfit.com</p>
-    <p>Instagram: @stepfit</p>
-</section>
-
-<footer>
-    © 2026 STep FIT | Todos los derechos reservados
-</footer>
+    </section>
+</div>
 
 </body>
 </html>
