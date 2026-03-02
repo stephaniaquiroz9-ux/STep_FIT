@@ -1,262 +1,118 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>STep FIT</title>
 
 <style>
-
-/* ===== GENERAL ===== */
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #fff0f3;
+    background-color: #800020; /* Rojo vino */
+    color: white;
 }
 
-/* ===== SIDEBAR ===== */
+/* Sidebar */
 .sidebar {
     position: fixed;
     left: 0;
     top: 0;
     width: 230px;
     height: 100%;
-    background-color: #800020;
-    padding-top: 40px;
-    box-shadow: 2px 0 15px rgba(0,0,0,0.15);
+    background-color: #5a0016;
+    padding-top: 20px;
+    box-shadow: 2px 0 15px rgba(0,0,0,0.3);
 }
 
-.sidebar h2 {
+/* LOGO */
+.logo {
     text-align: center;
-    color: white;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
+.logo img {
+    width: 160px;
+}
+
+/* Links */
 .sidebar a {
     display: block;
-    padding: 15px 25px;
+    padding: 15px 20px;
     text-decoration: none;
-    color: #f8d7da;
+    color: white;
     font-weight: bold;
     transition: 0.3s;
 }
 
 .sidebar a:hover {
-    background-color: #a8324a;
-    color: white;
+    background-color: #800020;
+    padding-left: 25px;
 }
 
-/* ===== CONTENT ===== */
+/* Content */
 .content {
     margin-left: 250px;
-    padding: 60px;
+    padding: 40px;
 }
 
-section {
-    margin-bottom: 100px;
-}
-
-/* ===== INICIO ===== */
-#inicio {
-    background: white;
-    padding: 50px;
-    border-radius: 25px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-#inicio h1 {
-    color: #800020;
-    font-size: 38px;
-}
-
-/* ===== PRODUCTOS ===== */
-.productos-grid {
-    display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
+/* Cards */
 .card {
     background: white;
-    padding: 20px;
-    width: 280px;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    transition: 0.3s;
-    text-align: center;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-}
-
-.card img {
-    width: 100%;
-    border-radius: 15px;
-    margin-bottom: 15px;
-}
-
-.card h3 {
     color: #800020;
+    padding: 20px;
+    margin: 20px 0;
+    width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-/* ===== BOTONES ===== */
 button {
     background-color: #800020;
     color: white;
     border: none;
-    padding: 10px 25px;
-    border-radius: 25px;
+    padding: 10px 20px;
+    border-radius: 20px;
     cursor: pointer;
-    transition: 0.3s;
 }
 
 button:hover {
-    background-color: #a8324a;
+    background-color: #a0002a;
 }
-
-/* ===== CAJAS ===== */
-.box {
-    background: white;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-/* ===== BOTÓN FLOTANTE WHATSAPP ===== */
-.whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #800020;
-    color: white;
-    padding: 15px 20px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    transition: 0.3s;
-}
-
-.whatsapp-float:hover {
-    transform: scale(1.1);
-    background-color: #a8324a;
-}
-
-/* ===== FOOTER ===== */
-footer {
-    text-align: center;
-    padding: 20px;
-    color: #555;
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-
-    .sidebar {
-        position: relative;
-        width: 100%;
-        height: auto;
-        display: flex;
-        justify-content: space-around;
-        padding: 15px 0;
-    }
-
-    .sidebar h2 {
-        display: none;
-    }
-
-    .content {
-        margin-left: 0;
-        padding: 30px;
-    }
-
-    .productos-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
 </style>
 </head>
 
 <body>
 
 <div class="sidebar">
-    <h2>STep FIT ✨</h2>
-    <a href="#inicio">Inicio</a>
-    <a href="#productos">Productos</a>
-    <a href="#nosotras">Nosotras</a>
-    <a href="#contacto">Contacto</a>
+
+    <!-- LOGO AQUI -->
+    <div class="logo">
+        <img src="logo.png" alt="STep FIT Logo">
+    </div>
+
+    <a href="#">Inicio</a>
+    <a href="#">Productos</a>
+    <a href="#">Nosotras</a>
+    <a href="#">Contacto</a>
+
 </div>
 
 <div class="content">
+    <h1>Bienvenida a STep FIT ✨</h1>
+    <p>Ropa deportiva femenina elegante y poderosa.</p>
 
-<section id="inicio">
-    <h1>Brilla mientras entrenas ✨</h1>
-    <p>Ropa deportiva femenina diseñada para mujeres fuertes y elegantes.</p>
-</section>
-
-<section id="productos">
-    <h1 style="text-align:center; color:#800020;">Nuestros Productos 🍷</h1>
-
-    <div class="productos-grid">
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1599058917765-a780eda07a3e" alt="Legging">
-            <h3>Legging Glow Sculpt</h3>
-            <p>₡18,000</p>
-            <a href="https://wa.me/50660866716?text=Hola%20quiero%20el%20Legging%20Glow%20Sculpt" target="_blank">
-                <button>Comprar</button>
-            </a>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1594737625785-cb9b6c47b9c1" alt="Top">
-            <h3>Top Soft Energy</h3>
-            <p>₡12,000</p>
-            <a href="https://wa.me/50660866716?text=Hola%20quiero%20el%20Top%20Soft%20Energy" target="_blank">
-                <button>Comprar</button>
-            </a>
-        </div>
-
+    <div class="card">
+        <h3>Legging Glow Sculpt</h3>
+        <p>₡18,000</p>
+        <button>Comprar</button>
     </div>
-</section>
 
-<section id="nosotras">
-    <div class="box">
-        <h1 style="color:#800020;">Nosotras</h1>
-        <p>STep FIT representa elegancia, fuerza y confianza femenina.</p>
+    <div class="card">
+        <h3>Top Soft Energy</h3>
+        <p>₡12,000</p>
+        <button>Comprar</button>
     </div>
-</section>
-
-<section id="contacto">
-    <div class="box">
-        <h1 style="color:#800020;">Contacto</h1>
-        <a href="https://wa.me/50660866716?text=Hola%20quiero%20informacion%20de%20STep%20FIT" target="_blank">
-            <button>Escribir por WhatsApp</button>
-        </a>
-    </div>
-</section>
-
-<footer>
-    © 2026 STep FIT | Diseño elegante 🍷
-</footer>
-
 </div>
-
-<a href="https://wa.me/50660866716?text=Hola%20quiero%20informacion%20de%20STep%20FIT"
-   class="whatsapp-float"
-   target="_blank">
-   WhatsApp
-</a>
 
 </body>
 </html>
