@@ -7,324 +7,337 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: 'Montserrat', sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Montserrat',sans-serif;
 }
 
-/* FONDO TOTAL ROJO */
+/* FONDO */
 body{
-    background:#800020;
-    color:white;
+background:#800020;
+color:white;
 }
 
 /* SIDEBAR */
+
 .sidebar{
-    position: fixed;
-    left:0;
-    top:0;
-    width:180px;
-    height:100vh;
-    background:#660018;
-    padding:20px 15px;
-    display:flex;
-    flex-direction: column;
-    align-items: center;
+position:fixed;
+left:0;
+top:0;
+width:180px;
+height:100vh;
+background:#660018;
+padding:20px 15px;
+display:flex;
+flex-direction:column;
+align-items:center;
 }
 
 .sidebar img{
-    width:130px;
-    margin-bottom:40px;
+width:130px;
+margin-bottom:40px;
 }
 
 .menu{
-    list-style:none;
-    width:100%;
-    text-align:center;
+list-style:none;
+width:100%;
+text-align:center;
 }
 
 .menu li{
-    margin:20px 0;
+margin:20px 0;
 }
 
 .menu a{
-    text-decoration:none;
-    color:white;
-    font-weight:600;
-    transition:0.3s;
+text-decoration:none;
+color:white;
+font-weight:600;
+transition:0.3s;
 }
 
 .menu a:hover{
-    color:#ffccd5;
+color:#ffccd5;
 }
 
 /* MAIN */
+
 .main{
-    margin-left:180px;
-    padding:40px;
+margin-left:180px;
+padding:40px;
 }
 
 /* HERO */
+
 .hero{
-    background: url('hero.jpg') center/cover no-repeat;
-    border-radius:15px;
-    padding:80px 40px;
-    color:white;
-    text-align:center;
-    position: relative;
-    overflow:hidden;
+background:url('hero.jpg') center/cover no-repeat;
+border-radius:15px;
+padding:80px 40px;
+text-align:center;
+position:relative;
+overflow:hidden;
 }
 
 .hero::after{
-    content:"";
-    position:absolute;
-    top:0; left:0;
-    width:100%; height:100%;
-    background: rgba(128,0,32,0.5);
-    border-radius:15px;
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(128,0,32,0.5);
+border-radius:15px;
 }
 
 .hero h1{
-    font-size:48px;
-    font-weight:700;
-    position: relative;
-    z-index:1;
-    margin-bottom:20px;
+font-size:48px;
+position:relative;
+z-index:1;
+margin-bottom:20px;
 }
 
 .hero p{
-    font-size:22px;
-    margin-bottom:30px;
-    position: relative;
-    z-index:1;
+font-size:22px;
+margin-bottom:30px;
+position:relative;
+z-index:1;
 }
 
+/* BOTON */
+
 .btn{
-    background:#ffccd5;
-    color:#800020;
-    padding:15px 35px;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:700;
-    transition:0.3s;
-    position: relative;
-    z-index:1;
+background:#ffccd5;
+color:#800020;
+padding:12px 30px;
+border-radius:30px;
+text-decoration:none;
+font-weight:700;
+display:inline-block;
+transition:0.3s;
 }
 
 .btn:hover{
-    background:#fff;
-    transform:scale(1.05);
+background:white;
+transform:scale(1.05);
 }
 
 /* PRODUCTOS */
+
 .productos{
-    margin-top:60px;
+margin-top:60px;
 }
 
 .productos h2{
-    font-size:32px;
-    margin-bottom:40px;
-    text-align:center;
-    color:#ffccd5;
+font-size:32px;
+margin-bottom:40px;
+text-align:center;
+color:#ffccd5;
 }
 
 .cards{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-    gap:30px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
 }
 
 .card{
-    background:#ffccd5;
-    color:#800020;
-    border-radius:15px;
-    padding:20px;
-    text-align:center;
-    box-shadow:0 5px 15px rgba(0,0,0,0.2);
-    transition: 0.4s;
-    transform: translateY(20px);
-    opacity:0;
-    animation:fadeInUp 0.6s forwards;
+background:#ffccd5;
+color:#800020;
+border-radius:15px;
+padding:20px;
+text-align:center;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+transition:0.4s;
 }
 
-.card:nth-child(1){animation-delay:0.1s;}
-.card:nth-child(2){animation-delay:0.2s;}
-.card:nth-child(3){animation-delay:0.3s;}
-.card:nth-child(4){animation-delay:0.4s;}
-.card:nth-child(5){animation-delay:0.5s;}
-.card:nth-child(6){animation-delay:0.6s;}
-
 .card:hover{
-    transform: translateY(-10px) scale(1.05);
-    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+transform:translateY(-10px) scale(1.05);
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+.card img{
+width:100%;
+border-radius:10px;
+margin-bottom:15px;
 }
 
 .card h3{
-    margin-bottom:10px;
+margin-bottom:10px;
 }
 
 .card p{
-    font-size:14px;
+font-size:14px;
 }
 
-@keyframes fadeInUp{
-    to{
-        transform: translateY(0);
-        opacity:1;
-    }
+/* PRECIO */
+
+.price{
+font-size:22px;
+font-weight:700;
+color:#800020;
+background:white;
+display:inline-block;
+padding:6px 15px;
+border-radius:20px;
+margin:10px 0 15px 0;
 }
+
+/* FOOTER */
 
 footer{
-    text-align:center;
-    margin-top:60px;
-    padding:20px 0;
-    color:#ffccd5;
-    font-size:14px;
+text-align:center;
+margin-top:60px;
+padding:20px 0;
+color:#ffccd5;
 }
 
-/* BOTON WHATSAPP */
+/* WHATSAPP */
+
 .whatsapp-btn{
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width:60px;
-    height:60px;
-    background:#25D366;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    box-shadow:0 5px 15px rgba(0,0,0,0.3);
-    transition: transform 0.3s, box-shadow 0.3s;
-    z-index:1000;
+position:fixed;
+bottom:30px;
+right:30px;
+width:60px;
+height:60px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+z-index:1000;
 }
 
 .whatsapp-btn img{
-    width:30px;
+width:30px;
 }
 
 .whatsapp-tooltip{
-    position: absolute;
-    right: 70px;
-    background: #ffccd5;
-    color: #800020;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-weight:600;
-    font-size:14px;
-    opacity:0;
-    white-space: nowrap;
-    pointer-events: none;
-    transform: translateX(10px);
-    transition: opacity 0.3s, transform 0.3s;
-}
-
-.whatsapp-btn:hover{
-    transform: scale(1.1);
+position:absolute;
+right:70px;
+background:#ffccd5;
+color:#800020;
+padding:8px 15px;
+border-radius:20px;
+font-weight:600;
+font-size:14px;
+opacity:0;
+transition:0.3s;
 }
 
 .whatsapp-btn:hover .whatsapp-tooltip{
-    opacity:1;
-    transform: translateX(0);
+opacity:1;
 }
+
+/* RESPONSIVE */
 
 @media(max-width:768px){
-    .sidebar{
-        width:60px;
-        padding:20px 5px;
-    }
 
-    .sidebar img{
-        width:40px;
-        margin-bottom:20px;
-    }
-
-    .main{
-        margin-left:60px;
-        padding:20px;
-    }
-
-    .hero h1{
-        font-size:32px;
-    }
-
-    .hero p{
-        font-size:18px;
-    }
+.sidebar{
+width:60px;
+padding:20px 5px;
 }
+
+.sidebar img{
+width:40px;
+}
+
+.main{
+margin-left:60px;
+padding:20px;
+}
+
+.hero h1{
+font-size:32px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
 <div class="sidebar">
-    <img src="SOUL.png" alt="Step Soul">
-    <ul class="menu">
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Colección</a></li>
-        <li><a href="#">Nosotras</a></li>
-        <li><a href="#">Contacto</a></li>
-    </ul>
+
+<img src="SOUL.png" alt="Step Soul">
+
+<ul class="menu">
+<li><a href="#">Inicio</a></li>
+<li><a href="#">Colección</a></li>
+<li><a href="#">Nosotras</a></li>
+<li><a href="#">Contacto</a></li>
+</ul>
+
 </div>
 
 <div class="main">
 
 <section class="hero">
-    <h1>Ropa Deportiva Femenina</h1>
-    <p>Elegancia • Fuerza • Confianza</p>
-    <a href="#" class="btn">Ver Colección</a>
+
+<h1>Ropa Deportiva Femenina</h1>
+<p>Elegancia • Fuerza • Confianza</p>
+<a href="#" class="btn">Ver Colección</a>
+
 </section>
 
 <section class="productos">
+
 <h2>Tops Step Soul</h2>
 
 <div class="cards">
 
 <div class="card">
-<img src="top-rosa.png" style="width:100%; border-radius:10px;">
+<img src="top-rosa.png">
 <h3>Top Soul Pink</h3>
 <p>Top deportivo elegante de manga larga.</p>
 <div class="price">₡16 000</div>
-<a href="https://wa.me/50660866716?text=Hola%20quiero%20el%20Top%20Soul%20Pink" class="btn">Comprar</a>
+<a href="https://wa.me/50660866716?text=Hola quiero el Top Soul Pink" class="btn">Comprar</a>
 </div>
 
 <div class="card">
-<img src="top-azul.png" style="width:100%; border-radius:10px;">
+<img src="top-blue.png">
 <h3>Top Soul Sky</h3>
 <p>Diseño cómodo y estilizado para entrenar.</p>
 <div class="price">₡16 000</div>
-<a href="https://wa.me/50660866716?text=Hola%20quiero%20el%20Top%20Soul%20Sky" class="btn">Comprar</a>
+<a href="https://wa.me/50660866716?text=Hola quiero el Top Soul Sky" class="btn">Comprar</a>
 </div>
 
 <div class="card">
-<img src="top-verde.png" style="width:100%; border-radius:10px;">
+<img src="top-verde.png">
 <h3>Top Soul Olive</h3>
 <p>Estilo minimalista y deportivo.</p>
 <div class="price">₡16 000</div>
-<a href="https://wa.me/50660866716?text=Hola%20quiero%20el%20Top%20Soul%20Olive" class="btn">Comprar</a>
+<a href="https://wa.me/50660866716?text=Hola quiero el Top Soul Olive" class="btn">Comprar</a>
 </div>
 
 <div class="card">
-<img src="top-negro.png" style="width:100%; border-radius:10px;">
+<img src="top-negro.png">
 <h3>Top Soul Black</h3>
-<p>El clásico imprescindible para cualquier outfit fitness.</p>
+<p>El clásico imprescindible fitness.</p>
 <div class="price">₡16 000</div>
-<a href="https://wa.me/50660866716?text=Hola%20quiero%20el%20Top%20Soul%20Black" class="btn">Comprar</a>
+<a href="https://wa.me/50660866716?text=Hola quiero el Top Soul Black" class="btn">Comprar</a>
 </div>
 
 </div>
+
 </section>
+
 <footer>
-© 2026 Step Soul | Todos los derechos reservados
+© 2026 STep SOUL | Todos los derechos reservados
 </footer>
 
 </div>
 
 <a href="https://wa.me/50660866716" target="_blank" class="whatsapp-btn">
-<img src="whatsapp-icon.png" alt="WhatsApp">
-<span class="whatsapp-tooltip">¡Escríbeme por WhatsApp!</span>
+<img src="whatsapp-icon.png">
+<span class="whatsapp-tooltip">¡Escríbeme!</span>
 </a>
 
 </body>
