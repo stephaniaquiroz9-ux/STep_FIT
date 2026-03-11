@@ -3,381 +3,261 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>STep SOUL</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+<title>STEP SOUL</title>
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Montserrat',sans-serif;
-}
-
-/* FONDO */
 body{
-background:#800020;
-color:white;
+margin:0;
+font-family:Arial;
+background:#fff0f5;
 }
 
-/* SIDEBAR */
+/* MENU */
 
-.sidebar{
+.menu{
 position:fixed;
 left:0;
 top:0;
-width:180px;
-height:100vh;
-background:#660018;
-padding:20px 15px;
-display:flex;
-flex-direction:column;
-align-items:center;
+height:100%;
+width:200px;
+background:#800020;
+padding-top:30px;
+color:white;
 }
 
-.sidebar img{
-width:130px;
-margin-bottom:40px;
-}
-
-.menu{
-list-style:none;
-width:100%;
-text-align:center;
-}
-
-.menu li{
-margin:20px 0;
+.menu img{
+width:120px;
+display:block;
+margin:auto;
+margin-bottom:30px;
 }
 
 .menu a{
-text-decoration:none;
+display:block;
 color:white;
-font-weight:600;
-transition:0.3s;
+text-decoration:none;
+padding:15px;
+font-weight:bold;
 }
 
 .menu a:hover{
-color:#ffccd5;
+background:#e6005c;
 }
 
-/* MAIN */
+/* CONTENIDO */
 
-.main{
-margin-left:180px;
-padding:40px;
+.contenido{
+margin-left:200px;
 }
 
 /* HERO */
 
 .hero{
-background:url('hero.jpg') center/cover no-repeat;
-border-radius:15px;
-padding:80px 40px;
+height:400px;
+background:#800020;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
 text-align:center;
-position:relative;
-overflow:hidden;
-}
-
-.hero::after{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(128,0,32,0.5);
-border-radius:15px;
 }
 
 .hero h1{
-font-size:48px;
-position:relative;
-z-index:1;
-margin-bottom:20px;
+font-size:50px;
 }
 
 .hero p{
-font-size:22px;
-margin-bottom:30px;
-position:relative;
-z-index:1;
-}
-
-/* BOTON */
-
-.btn{
-background:#ffccd5;
-color:#800020;
-padding:12px 30px;
-border-radius:30px;
-text-decoration:none;
-font-weight:700;
-display:inline-block;
-transition:0.3s;
-}
-
-.btn:hover{
-background:white;
-transform:scale(1.05);
+font-size:20px;
 }
 
 /* PRODUCTOS */
 
 .productos{
-margin-top:60px;
+padding:50px;
+text-align:center;
 }
 
 .productos h2{
-font-size:32px;
-margin-bottom:40px;
-text-align:center;
-color:#ffccd5;
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:30px;
-}
-
-.card{
-background:#ffccd5;
+font-size:35px;
 color:#800020;
-border-radius:15px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.producto{
+background:white;
 padding:20px;
-text-align:center;
-box-shadow:0 5px 15px rgba(0,0,0,0.2);
-transition:0.4s;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
-.card:hover{
-transform:translateY(-10px) scale(1.05);
-box-shadow:0 10px 25px rgba(0,0,0,0.3);
-}
-
-.card img{
+.producto img{
 width:100%;
 border-radius:10px;
-margin-bottom:15px;
 }
 
-.card h3{
-margin-bottom:10px;
+.producto h3{
+margin:10px 0;
 }
-
-.card p{
-font-size:14px;
-}
-
-/* PRECIO */
 
 .price{
 font-size:22px;
-font-weight:700;
-color:#800020;
-background:white;
-display:inline-block;
-padding:6px 15px;
-border-radius:20px;
-margin:10px 0 15px 0;
+color:#e6005c;
+font-weight:bold;
 }
 
-/* FOOTER */
-
-footer{
-text-align:center;
-margin-top:60px;
-padding:20px 0;
-color:#ffccd5;
+.btn{
+display:inline-block;
+margin-top:10px;
+background:#e6005c;
+color:white;
+padding:10px 20px;
+border-radius:20px;
+text-decoration:none;
 }
 
 /* WHATSAPP */
 
-.whatsapp-btn{
+.whatsapp{
 position:fixed;
-bottom:30px;
-right:30px;
-width:60px;
-height:60px;
+bottom:20px;
+right:20px;
 background:#25D366;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-box-shadow:0 5px 15px rgba(0,0,0,0.3);
-z-index:1000;
-}
-
-.whatsapp-btn img{
-width:30px;
-}
-
-.whatsapp-tooltip{
-position:absolute;
-right:70px;
-background:#ffccd5;
-color:#800020;
-padding:8px 15px;
-border-radius:20px;
-font-weight:600;
-font-size:14px;
-opacity:0;
-transition:0.3s;
-}
-
-.whatsapp-btn:hover .whatsapp-tooltip{
-opacity:1;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:768px){
-
-.sidebar{
-width:60px;
-padding:20px 5px;
-}
-
-.sidebar img{
-width:40px;
-}
-
-.main{
-margin-left:60px;
-padding:20px;
-}
-
-.hero h1{
-font-size:32px;
-}
-
-.hero p{
-font-size:18px;
-}
-
+color:white;
+padding:15px 20px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
 }
 
 </style>
+
 </head>
 
 <body>
 
-<div class="sidebar">
+<!-- MENU -->
 
-<img src="SOUL.png" alt="Step Soul">
+<div class="menu">
 
-<ul class="menu">
-<li><a href="#">Inicio</a></li>
-<li><a href="#">Colección</a></li>
-<li><a href="#">Nosotras</a></li>
-<li><a href="#">Contacto</a></li>
-</ul>
+<img src="SOUL.png">
+
+<a href="#">Inicio</a>
+<a href="#productos">Productos</a>
+<a href="#">Contacto</a>
 
 </div>
 
-<div class="main">
+<div class="contenido">
+
+<!-- HERO -->
 
 <section class="hero">
 
-<h1>Ropa Deportiva Femenina</h1>
-<p>Elegancia • Fuerza • Confianza</p>
-<a href="#" class="btn">Ver Colección</a>
+<div>
+<h1>STEP SOUL</h1>
+<p>Ropa Deportiva Femenina</p>
+</div>
 
 </section>
 
-<section class="productos">
+<!-- PRODUCTOS -->
+
+<section class="productos" id="productos">
 
 <h2>Colección Step Soul</h2>
 
-<div class="cards">
+<div class="grid">
 
 <!-- TOP 1 -->
-<div class="card">
-<img src="top1.png">
+
+<div class="producto">
+<img src="top-rosa.png">
 <h3>Top Soul Pink</h3>
-<p>Top deportivo elegante de manga larga.</p>
-<div class="price">₡16 000</div>
+<p class="price">₡16 000</p>
 <a href="https://wa.me/50660866716?text=Hola quiero el Top Soul Pink" class="btn">Comprar</a>
 </div>
 
 <!-- TOP 2 -->
-<div class="card">
-<img src="top2.png">
+
+<div class="producto">
+<img src="top-blue.png">
 <h3>Top Soul Sky</h3>
-<p>Diseño cómodo y estilizado para entrenar.</p>
-<div class="price">₡16 000</div>
+<p class="price">₡16 000</p>
 <a href="https://wa.me/50660866716?text=Hola quiero el Top Soul Sky" class="btn">Comprar</a>
 </div>
 
 <!-- TOP 3 -->
-<div class="card">
-<img src="top3.png">
+
+<div class="producto">
+<img src="top-verde.png">
 <h3>Top Soul Olive</h3>
-<p>Estilo minimalista y deportivo.</p>
-<div class="price">₡16 000</div>
+<p class="price">₡16 000</p>
 <a href="https://wa.me/50660866716?text=Hola quiero el Top Soul Olive" class="btn">Comprar</a>
 </div>
 
 <!-- TOP 4 -->
-<div class="card">
-<img src="top4.png">
+
+<div class="producto">
+<img src="top-negro.png">
 <h3>Top Soul Black</h3>
-<p>El clásico imprescindible fitness.</p>
-<div class="price">₡16 000</div>
+<p class="price">₡16 000</p>
 <a href="https://wa.me/50660866716?text=Hola quiero el Top Soul Black" class="btn">Comprar</a>
 </div>
 
 <!-- LEGGINS 1 -->
-<div class="card">
+
+<div class="producto">
 <img src="leggins1.png">
-<h3>Leggings Soul Black</h3>
-<p>Leggings deportivos moldeadores.</p>
-<div class="price">₡18 000</div>
-<a href="https://wa.me/50660866716?text=Hola quiero los Leggings Soul Black" class="btn">Comprar</a>
+<h3>Leggins Soul Black</h3>
+<p class="price">₡18 000</p>
+<a href="https://wa.me/50660866716?text=Hola quiero los Leggins Soul Black" class="btn">Comprar</a>
 </div>
 
 <!-- LEGGINS 2 -->
-<div class="card">
+
+<div class="producto">
 <img src="leggins2.png">
-<h3>Leggings Soul Grey</h3>
-<p>Comodidad total para entrenar.</p>
-<div class="price">₡18 000</div>
-<a href="https://wa.me/50660866716?text=Hola quiero los Leggings Soul Grey" class="btn">Comprar</a>
+<h3>Leggins Soul Grey</h3>
+<p class="price">₡18 000</p>
+<a href="https://wa.me/50660866716?text=Hola quiero los Leggins Soul Grey" class="btn">Comprar</a>
 </div>
 
 <!-- LEGGINS 3 -->
-<div class="card">
+
+<div class="producto">
 <img src="leggins3.png">
-<h3>Leggings Soul Olive</h3>
-<p>Diseño moderno y cómodo.</p>
-<div class="price">₡18 000</div>
-<a href="https://wa.me/50660866716?text=Hola quiero los Leggings Soul Olive" class="btn">Comprar</a>
+<h3>Leggins Soul Pink</h3>
+<p class="price">₡18 000</p>
+<a href="https://wa.me/50660866716?text=Hola quiero los Leggins Soul Pink" class="btn">Comprar</a>
 </div>
 
 <!-- LEGGINS 4 -->
-<div class="card">
+
+<div class="producto">
 <img src="leggins4.png">
-<h3>Leggings Soul Pink</h3>
-<p>Leggings suaves y flexibles.</p>
-<div class="price">₡18 000</div>
-<a href="https://wa.me/50660866716?text=Hola quiero los Leggings Soul Pink" class="btn">Comprar</a>
+<h3>Leggins Soul Olive</h3>
+<p class="price">₡18 000</p>
+<a href="https://wa.me/50660866716?text=Hola quiero los Leggins Soul Olive" class="btn">Comprar</a>
 </div>
 
 </div>
 
 </section>
 
-<footer>
-© 2026 STep SOUL | Todos los derechos reservados
-</footer>
-
 </div>
 
-<a href="https://wa.me/50660866716" target="_blank" class="whatsapp-btn">
-<img src="whatsapp-icon.png">
-<span class="whatsapp-tooltip">¡Escríbeme!</span>
+<!-- BOTON WHATSAPP -->
+
+<a href="https://wa.me/50660866716" class="whatsapp">
+WhatsApp
 </a>
 
 </body>
