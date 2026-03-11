@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>STep SOUL</title>
+<title>STEP SOUL</title>
 
 <style>
 
 body{
 margin:0;
-font-family:Arial;
+font-family:Arial, Helvetica, sans-serif;
 background:#fff0f5;
 }
 
@@ -20,25 +22,24 @@ background:#fff0f5;
 position:fixed;
 left:0;
 top:0;
-height:100%;
 width:200px;
+height:100%;
 background:#800020;
 padding-top:30px;
 color:white;
+text-align:center;
 }
 
 .menu img{
 width:120px;
-display:block;
-margin:auto;
 margin-bottom:30px;
 }
 
 .menu a{
 display:block;
+padding:15px;
 color:white;
 text-decoration:none;
-padding:15px;
 font-weight:bold;
 }
 
@@ -55,17 +56,18 @@ margin-left:200px;
 /* HERO */
 
 .hero{
-height:400px;
+height:350px;
 background:#800020;
+color:white;
 display:flex;
 justify-content:center;
 align-items:center;
-color:white;
 text-align:center;
 }
 
 .hero h1{
-font-size:50px;
+font-size:48px;
+margin:0;
 }
 
 .hero p{
@@ -80,26 +82,30 @@ text-align:center;
 }
 
 .productos h2{
-font-size:35px;
 color:#800020;
+font-size:35px;
 }
+
+/* GRID PRODUCTOS */
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
 margin-top:40px;
 }
 
 .producto{
 background:white;
-padding:20px;
 border-radius:15px;
+padding:15px;
 box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
 .producto img{
 width:100%;
+height:240px;
+object-fit:cover;
 border-radius:10px;
 }
 
@@ -109,8 +115,8 @@ margin:10px 0;
 
 .price{
 font-size:22px;
-color:#e6005c;
 font-weight:bold;
+color:#e6005c;
 }
 
 .btn{
@@ -118,9 +124,10 @@ display:inline-block;
 margin-top:10px;
 background:#e6005c;
 color:white;
-padding:10px 20px;
+padding:10px 18px;
 border-radius:20px;
 text-decoration:none;
+font-weight:bold;
 }
 
 /* WHATSAPP */
@@ -131,10 +138,43 @@ bottom:20px;
 right:20px;
 background:#25D366;
 color:white;
-padding:15px 20px;
-border-radius:50px;
+padding:14px 20px;
+border-radius:30px;
 text-decoration:none;
 font-weight:bold;
+}
+
+/* CELULAR */
+
+@media (max-width:768px){
+
+.menu{
+position:relative;
+width:100%;
+height:auto;
+}
+
+.contenido{
+margin-left:0;
+}
+
+.grid{
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+}
+
+.producto img{
+height:200px;
+}
+
+.hero{
+height:250px;
+}
+
+.hero h1{
+font-size:32px;
+}
+
 }
 
 </style>
@@ -142,8 +182,6 @@ font-weight:bold;
 </head>
 
 <body>
-
-<!-- MENU -->
 
 <div class="menu">
 
@@ -157,8 +195,6 @@ font-weight:bold;
 
 <div class="contenido">
 
-<!-- HERO -->
-
 <section class="hero">
 
 <div>
@@ -168,82 +204,64 @@ font-weight:bold;
 
 </section>
 
-<!-- PRODUCTOS -->
-
 <section class="productos" id="productos">
 
-<h2>Colección STep Soul</h2>
+<h2>Colección Step Soul</h2>
 
 <div class="grid">
 
-<!-- TOP 1 -->
-
 <div class="producto">
-<img src="top-rosa.png">
+<img src="top1.png">
 <h3>Top Soul Pink</h3>
 <p class="price">₡16 000</p>
 <a href="https://wa.me/50660866716?text=Hola quiero el Top Soul Pink" class="btn">Comprar</a>
 </div>
 
-<!-- TOP 2 -->
-
 <div class="producto">
-<img src="top-blue.png">
+<img src="top2.png">
 <h3>Top Soul Sky</h3>
 <p class="price">₡16 000</p>
 <a href="https://wa.me/50660866716?text=Hola quiero el Top Soul Sky" class="btn">Comprar</a>
 </div>
 
-<!-- TOP 3 -->
-
 <div class="producto">
-<img src="top-verde.png">
+<img src="top3.png">
 <h3>Top Soul Olive</h3>
 <p class="price">₡16 000</p>
 <a href="https://wa.me/50660866716?text=Hola quiero el Top Soul Olive" class="btn">Comprar</a>
 </div>
 
-<!-- TOP 4 -->
-
 <div class="producto">
-<img src="top-negro.png">
+<img src="top4.png">
 <h3>Top Soul Black</h3>
 <p class="price">₡16 000</p>
 <a href="https://wa.me/50660866716?text=Hola quiero el Top Soul Black" class="btn">Comprar</a>
 </div>
 
-<!-- LEGGINS 1 -->
-
 <div class="producto">
 <img src="leggins1.png">
-<h3>Leggins Soul Sky</h3>
+<h3>Leggins Soul Black</h3>
 <p class="price">₡18 000</p>
 <a href="https://wa.me/50660866716?text=Hola quiero los Leggins Soul Black" class="btn">Comprar</a>
 </div>
 
-<!-- LEGGINS 2 -->
-
 <div class="producto">
 <img src="leggins2.png">
-<h3>Leggins Soul Pink</h3>
+<h3>Leggins Soul Grey</h3>
 <p class="price">₡18 000</p>
 <a href="https://wa.me/50660866716?text=Hola quiero los Leggins Soul Grey" class="btn">Comprar</a>
 </div>
 
-<!-- LEGGINS 3 -->
-
 <div class="producto">
 <img src="leggins3.png">
-<h3>Leggins Soul White</h3>
+<h3>Leggins Soul Pink</h3>
 <p class="price">₡18 000</p>
 <a href="https://wa.me/50660866716?text=Hola quiero los Leggins Soul Pink" class="btn">Comprar</a>
 </div>
 
-<!-- LEGGINS 4 -->
-
 <div class="producto">
 <img src="leggins4.png">
-<h3>Leggins Soul Black</h3>
+<h3>Leggins Soul Olive</h3>
 <p class="price">₡18 000</p>
 <a href="https://wa.me/50660866716?text=Hola quiero los Leggins Soul Olive" class="btn">Comprar</a>
 </div>
@@ -254,11 +272,7 @@ font-weight:bold;
 
 </div>
 
-<!-- BOTON WHATSAPP -->
-
-<a href="https://wa.me/50660866716" class="whatsapp">
-WhatsApp
-</a>
+<a href="https://wa.me/50660866716" class="whatsapp">WhatsApp</a>
 
 </body>
 </html>
