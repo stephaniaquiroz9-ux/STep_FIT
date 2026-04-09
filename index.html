@@ -11,7 +11,7 @@
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-background:#ffe4ec; /* rosado suave */
+background:#ffe4ec;
 }
 
 /* MENU */
@@ -76,7 +76,7 @@ font-size:20px;
 
 .historia{
 padding:60px 30px;
-background:#ffd6e7; /* rosado elegante */
+background:#ffd6e7;
 text-align:center;
 }
 
@@ -109,6 +109,44 @@ font-size:22px;
 font-style:italic;
 }
 
+/* AFIRMACIONES */
+
+.afirmaciones{
+padding:60px 20px;
+background:#ffe4ec;
+text-align:center;
+}
+
+.afirmaciones h2{
+color:#800020;
+font-size:30px;
+margin-bottom:30px;
+}
+
+.afirmaciones-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+max-width:900px;
+margin:auto;
+}
+
+.afirmaciones-grid p{
+background:#ff4d88;
+color:white;
+padding:20px;
+border-radius:20px;
+font-size:16px;
+font-weight:bold;
+box-shadow:0 5px 10px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.afirmaciones-grid p:hover{
+transform:scale(1.05);
+background:#800020;
+}
+
 /* PRODUCTOS */
 
 .productos{
@@ -134,7 +172,7 @@ margin-right:auto;
 }
 
 .producto{
-background:#fff0f5; /* rosado claro */
+background:#fff0f5;
 border-radius:15px;
 padding:15px;
 box-shadow:0 5px 15px rgba(0,0,0,0.1);
@@ -207,6 +245,10 @@ grid-template-columns:repeat(2,1fr);
 gap:15px;
 }
 
+.afirmaciones-grid{
+grid-template-columns:repeat(1,1fr);
+}
+
 .producto img{
 height:200px;
 }
@@ -242,21 +284,18 @@ font-size:32px;
 </div>
 </section>
 
-<!-- HISTORIA -->
-
 <section class="historia">
 <div class="historia-contenido">
-
 <h2>El inicio de Step Soul</h2>
 
 <p>
-Step Soul nace desde algo más profundo que la ropa… nace desde el alma.
-De la necesidad de sentirnos seguras, auténticas y poderosas en cada paso.
+Step Soul nace desde el alma… de la necesidad de sentirnos seguras,
+auténticas y poderosas en cada paso.
 </p>
 
 <p>
-Esta marca es para mujeres que están en su proceso,
-que se eligen todos los días y construyen su mejor versión.
+Esta marca es para mujeres que se eligen todos los días
+y construyen su mejor versión.
 </p>
 
 <p>
@@ -266,13 +305,23 @@ No es solo ropa deportiva… es energía, actitud y amor propio 💫
 </div>
 </section>
 
-<!-- FRASE -->
-
 <section class="frase">
 <p>"No es solo lo que usas, es cómo te sientes cuando lo llevas."</p>
 </section>
 
-<!-- PRODUCTOS -->
+<section class="afirmaciones">
+<h2>Afirmaciones Step Soul ✨</h2>
+
+<div class="afirmaciones-grid">
+<p>💫 Soy fuerte, capaz y segura de mí misma</p>
+<p>🌸 Mi cuerpo es hermoso tal y como es</p>
+<p>🔥 Merezco sentirme bien conmigo misma</p>
+<p>💖 Cada día soy una mejor versión de mí</p>
+<p>✨ Confío en mi proceso</p>
+<p>🌈 Mi energía atrae cosas positivas</p>
+</div>
+
+</section>
 
 <section class="productos" id="productos">
 
