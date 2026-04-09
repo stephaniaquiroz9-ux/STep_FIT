@@ -2,10 +2,8 @@
 <html lang="es">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>STEP SOUL</title>
 
 <style>
@@ -74,6 +72,43 @@ margin:0;
 font-size:20px;
 }
 
+/* HISTORIA */
+
+.historia{
+padding:60px 30px;
+background:#fff;
+text-align:center;
+}
+
+.historia-contenido{
+max-width:800px;
+margin:auto;
+}
+
+.historia h2{
+color:#800020;
+font-size:32px;
+margin-bottom:20px;
+}
+
+.historia p{
+font-size:18px;
+line-height:1.6;
+color:#333;
+margin-bottom:15px;
+}
+
+/* FRASE */
+
+.frase{
+background:#800020;
+color:white;
+padding:40px;
+text-align:center;
+font-size:22px;
+font-style:italic;
+}
+
 /* PRODUCTOS */
 
 .productos{
@@ -86,7 +121,7 @@ color:#800020;
 font-size:35px;
 }
 
-/* GRID PRODUCTOS */
+/* GRID */
 
 .grid{
 display:grid;
@@ -103,6 +138,11 @@ background:white;
 border-radius:15px;
 padding:15px;
 box-shadow:0 5px 15px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.producto:hover{
+transform:scale(1.03);
 }
 
 .producto img{
@@ -147,7 +187,7 @@ text-decoration:none;
 font-weight:bold;
 }
 
-/* CELULAR */
+/* RESPONSIVE */
 
 @media (max-width:768px){
 
@@ -181,31 +221,57 @@ font-size:32px;
 }
 
 </style>
-
 </head>
 
 <body>
 
 <div class="menu">
-
 <img src="SOUL.png">
-
 <a href="#">Inicio</a>
 <a href="#productos">Productos</a>
 <a href="#">Contacto</a>
-
 </div>
 
 <div class="contenido">
 
 <section class="hero">
-
 <div>
 <h1>STEP SOUL</h1>
 <p>Ropa Deportiva Femenina</p>
 </div>
-
 </section>
+
+<!-- HISTORIA -->
+
+<section class="historia">
+<div class="historia-contenido">
+
+<h2>El inicio de Step Soul</h2>
+
+<p>
+Step Soul nace desde algo más profundo que la ropa… nace desde el alma.
+De la necesidad de sentirnos seguras, auténticas y poderosas en cada paso.
+</p>
+
+<p>
+Esta marca es para mujeres que están en su proceso,
+que se eligen todos los días y construyen su mejor versión.
+</p>
+
+<p>
+No es solo ropa deportiva… es energía, actitud y amor propio 💫
+</p>
+
+</div>
+</section>
+
+<!-- FRASE -->
+
+<section class="frase">
+<p>"No es solo lo que usas, es cómo te sientes cuando lo llevas."</p>
+</section>
+
+<!-- PRODUCTOS -->
 
 <section class="productos" id="productos">
 
@@ -245,28 +311,28 @@ font-size:32px;
 <img src="leggins1.png">
 <h3>Leggins Soul Sky</h3>
 <p class="price">₡18 000</p>
-<a href="https://wa.me/50660866716?text=Hola quiero los Leggins Soul Black" class="btn">Comprar</a>
+<a href="https://wa.me/50660866716?text=Hola quiero los Leggins Soul Sky" class="btn">Comprar</a>
 </div>
 
 <div class="producto">
 <img src="leggins2.png">
 <h3>Leggins Soul Pink</h3>
 <p class="price">₡18 000</p>
-<a href="https://wa.me/50660866716?text=Hola quiero los Leggins Soul Grey" class="btn">Comprar</a>
+<a href="https://wa.me/50660866716?text=Hola quiero los Leggins Soul Pink" class="btn">Comprar</a>
 </div>
 
 <div class="producto">
 <img src="leggins3.png">
 <h3>Leggins Soul White</h3>
 <p class="price">₡18 000</p>
-<a href="https://wa.me/50660866716?text=Hola quiero los Leggins Soul Pink" class="btn">Comprar</a>
+<a href="https://wa.me/50660866716?text=Hola quiero los Leggins Soul White" class="btn">Comprar</a>
 </div>
 
 <div class="producto">
 <img src="leggins4.png">
 <h3>Leggins Soul Black</h3>
 <p class="price">₡18 000</p>
-<a href="https://wa.me/50660866716?text=Hola quiero los Leggins Soul Olive" class="btn">Comprar</a>
+<a href="https://wa.me/50660866716?text=Hola quiero los Leggins Soul Black" class="btn">Comprar</a>
 </div>
 
 </div>
