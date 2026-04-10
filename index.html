@@ -10,17 +10,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-.afirmaciones-grid p{
-cursor:pointer;
-transition:0.3s;
-}
-
-/* cuando está seleccionada */
-.afirmaciones-grid p.activa{
-background:#f6c1d0 !important;
-color:#800020 !important;
-transform:scale(1.05);
-}
 
 html{scroll-behavior:smooth;}
 
@@ -28,6 +17,13 @@ body{
 margin:0;
 font-family:'Poppins', sans-serif;
 background:#fde8ef;
+animation:fadeIn 1.2s ease-in-out;
+}
+
+/* ANIMACIÓN LUJO */
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(10px);}
+to{opacity:1; transform:translateY(0);}
 }
 
 /* MENU */
@@ -72,6 +68,7 @@ display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
+flex-direction:column;
 }
 
 .hero h1{
@@ -81,6 +78,29 @@ margin:0;
 
 .hero p{
 margin-top:10px;
+letter-spacing:2px;
+opacity:0.85;
+}
+
+/* BOTÓN MÚSICA */
+.btn-musica{
+margin-top:20px;
+background:linear-gradient(135deg,#800020,#f6c1d0);
+color:white;
+border:none;
+padding:14px 30px;
+border-radius:40px;
+cursor:pointer;
+font-size:16px;
+font-weight:500;
+letter-spacing:1px;
+transition:0.4s;
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+.btn-musica:hover{
+transform:scale(1.05);
+box-shadow:0 15px 35px rgba(0,0,0,0.25);
 }
 
 /* SECCIONES */
@@ -123,6 +143,15 @@ background:#800020;
 color:white;
 padding:25px;
 border-radius:25px;
+cursor:pointer;
+transition:0.3s;
+}
+
+/* AFIRMACIÓN SELECCIONADA */
+.afirmaciones-grid p.activa{
+background:#f6c1d0 !important;
+color:#800020 !important;
+transform:scale(1.05);
 }
 
 /* COMUNIDAD */
@@ -162,19 +191,6 @@ background:white;
 padding:15px;
 border-radius:15px;
 text-align:left;
-}
-
-.acciones{
-margin-top:10px;
-display:flex;
-gap:10px;
-}
-
-.acciones button{
-background:none;
-border:none;
-cursor:pointer;
-color:#800020;
 }
 
 /* CONTACTO */
@@ -239,6 +255,11 @@ color:#800020;
 
 <body>
 
+<!-- 🎵 MÚSICA -->
+<audio id="musica" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2023/05/02/audio_6c1b7f5f8a.mp3?filename=soft-ambient-piano-141099.mp3" type="audio/mpeg">
+</audio>
+
 <!-- MENU -->
 <div class="menu">
 <img src="SOUL.png">
@@ -255,6 +276,11 @@ color:#800020;
 <div>
 <h1>STEP SOUL</h1>
 <p>Ropa deportiva femenina</p>
+
+<button class="btn-musica" onclick="toggleMusica()">
+🎵 Activar experiencia Step Soul
+</button>
+
 </div>
 </section>
 
@@ -263,16 +289,13 @@ color:#800020;
 <h2>STEP SOUL</h2>
 
 <p>
-STep SOUL nace desde un pensamiento: crear algo con propósito.
+Step Soul nace desde un pensamiento: crear algo con propósito.
 Siempre me ha gustado inspirar… si crecen, yo crezco.
 </p>
+
 <p>
 No es solo ropa… es actitud, amor propio y evolución ♡
 </p>
-<p>
-Vean la vida desde la manera mas inspiradora para si mismas, las quiero ♡
-</p>
-
 </section>
 
 <!-- FRASE -->
@@ -282,7 +305,7 @@ Vean la vida desde la manera mas inspiradora para si mismas, las quiero ♡
 
 <!-- AFIRMACIONES -->
 <section>
-<h2>Afirmaciones STep SOUL ✨</h2>
+<h2>Afirmaciones Step Soul ✨</h2>
 
 <div class="afirmaciones-grid">
 <p>💫 Soy fuerte, capaz y segura</p>
@@ -292,25 +315,24 @@ Vean la vida desde la manera mas inspiradora para si mismas, las quiero ♡
 <p>✨ Confío en mi proceso</p>
 <p>🌈 Atraigo cosas hermosas</p>
 </div>
-
 </section>
 
 <!-- COLECCIÓN -->
 <section id="coleccion">
-<h2>Colección STep SOUL</h2>
+<h2>Colección Step Soul</h2>
 
 <p style="max-width:500px;margin:auto;">
 Descubre todas nuestras prendas diseñadas para hacerte sentir segura, hermosa y poderosa ♡
 </p>
 
 <a href="https://catalogo.treinta.co/stepsoul-7b892" target="_blank" class="btn-catalogo">
-Ver catálogo completo de prendas en entrega inmediata 
+Ver catálogo completo
 </a>
 </section>
 
 <!-- COMUNIDAD -->
 <section>
-<h2>Comunidad STep SOUL ♡</h2>
+<h2>Comunidad Step Soul ♡</h2>
 
 <div class="input-area">
 <input id="inputMensaje" placeholder="¿Cómo te sientes hoy?">
@@ -416,6 +438,29 @@ muro.appendChild(div);
 });
 });
 
+</script>
+
+<!-- 🎵 CONTROL MÚSICA -->
+<script>
+let musica = document.getElementById("musica");
+let reproduciendo = false;
+
+function toggleMusica(){
+if(!reproduciendo){
+musica.play();
+reproduciendo = true;
+}else{
+musica.pause();
+reproduciendo = false;
+}
+}
+
+/* AFIRMACIONES CLICK */
+document.querySelectorAll(".afirmaciones-grid p").forEach(item=>{
+item.addEventListener("click", ()=>{
+item.classList.toggle("activa");
+});
+});
 </script>
 
 </body>
