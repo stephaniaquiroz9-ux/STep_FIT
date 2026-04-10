@@ -11,9 +11,7 @@
 
 <style>
 
-html{
-scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth;}
 
 body{
 margin:0;
@@ -34,10 +32,7 @@ padding-top:30px;
 text-align:center;
 }
 
-.menu img{
-width:130px;
-margin-bottom:30px;
-}
+.menu img{width:130px;margin-bottom:30px;}
 
 .menu a{
 display:block;
@@ -45,18 +40,11 @@ padding:15px;
 color:white;
 text-decoration:none;
 font-weight:500;
-letter-spacing:1px;
 }
 
-.menu a:hover{
-background:#a8324a;
-}
+.menu a:hover{background:#a8324a;}
 
-/* CONTENIDO */
-
-.contenido{
-margin-left:220px;
-}
+.contenido{margin-left:220px;}
 
 /* HERO */
 
@@ -70,244 +58,147 @@ align-items:center;
 text-align:center;
 }
 
-.hero h1{
-font-size:50px;
-letter-spacing:3px;
-margin:0;
-}
-
-.hero p{
-font-size:18px;
-opacity:0.9;
-}
-
 /* HISTORIA */
 
-.historia{
-padding:80px 40px;
-background:#fff0f5;
-text-align:center;
-}
+.historia{padding:80px 40px;background:#fff0f5;text-align:center;}
 
-.historia h2{
-color:#800020;
-font-size:34px;
-margin-bottom:20px;
-}
+.historia h2{color:#800020;}
 
-.historia p{
-max-width:700px;
-margin:auto;
-font-size:17px;
-line-height:1.7;
-color:#4a0020;
-margin-bottom:15px;
-}
+.historia p{max-width:700px;margin:auto;color:#4a0020;}
 
 /* FRASE */
 
 .frase{
 background:#800020;
 color:white;
-padding:60px 20px;
+padding:60px;
 text-align:center;
-font-size:24px;
-font-style:italic;
-letter-spacing:1px;
 }
 
 /* AFIRMACIONES */
 
-.afirmaciones{
-padding:80px 20px;
-text-align:center;
-}
-
-.afirmaciones h2{
-color:#800020;
-margin-bottom:40px;
-}
+.afirmaciones{text-align:center;padding:80px 20px;}
 
 .afirmaciones-grid{
 display:grid;
 grid-template-columns:repeat(3,1fr);
-gap:25px;
-max-width:900px;
-margin:auto;
+gap:20px;
 }
 
 .afirmaciones-grid p{
 background:#800020;
 color:white;
-padding:25px;
-border-radius:25px;
-transition:0.4s;
+padding:20px;
+border-radius:20px;
 cursor:pointer;
 }
 
 .afirmaciones-grid p:hover{
 background:#f6c1d0;
 color:#800020;
-transform:translateY(-5px);
+}
+
+/* COMUNIDAD */
+
+.comunidad{
+padding:80px 20px;
+text-align:center;
+background:#fde8ef;
+}
+
+.comunidad h2{color:#800020;}
+
+.input-area{
+display:flex;
+justify-content:center;
+gap:10px;
+margin:20px 0;
+}
+
+.input-area input{
+padding:10px;
+border-radius:20px;
+border:1px solid #ccc;
+}
+
+.input-area button{
+background:#800020;
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:20px;
+cursor:pointer;
+}
+
+.muro{
+max-width:600px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.mensaje{
+background:#fff0f5;
+padding:15px;
+border-radius:15px;
+color:#800020;
 }
 
 /* PRODUCTOS */
 
-.productos{
-padding:80px 20px;
-text-align:center;
-}
-
-.productos h2{
-color:#800020;
-font-size:34px;
-}
-
-/* GRID */
+.productos{text-align:center;padding:80px 20px;}
 
 .grid{
 display:grid;
 grid-template-columns:repeat(3,1fr);
-gap:30px;
-margin-top:40px;
-max-width:1200px;
-margin:auto;
+gap:20px;
 }
 
 .producto{
 background:#fff0f5;
-border-radius:20px;
 padding:15px;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
-transition:0.3s;
-}
-
-.producto:hover{
-transform:translateY(-8px);
-}
-
-.producto img{
-width:100%;
-height:280px;
-object-fit:cover;
 border-radius:15px;
 }
 
-.producto h3{
-color:#800020;
-margin:10px 0;
-}
-
-.price{
-color:#a8324a;
-font-weight:600;
-}
+.producto img{width:100%;height:250px;object-fit:cover;}
 
 .btn{
-display:inline-block;
-margin-top:10px;
 background:#800020;
 color:white;
 padding:10px 20px;
-border-radius:25px;
+border-radius:20px;
 text-decoration:none;
-transition:0.3s;
-}
-
-.btn:hover{
-background:#a8324a;
+display:inline-block;
+margin-top:10px;
 }
 
 /* CONTACTO */
 
-.contacto{
-padding:80px 20px;
-text-align:center;
-background:#fff0f5;
-}
+.contacto{text-align:center;padding:80px 20px;background:#fff0f5;}
 
-.contacto h2{
-color:#800020;
-font-size:32px;
-margin-bottom:15px;
-}
-
-.texto-contacto{
-font-size:18px;
-color:#4a0020;
-margin-bottom:30px;
-}
-
-.contacto-opciones{
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-margin-bottom:30px;
-}
+.contacto h2{color:#800020;}
 
 .contacto-btn{
 background:#800020;
 color:white;
-padding:12px 25px;
-border-radius:25px;
+padding:10px 20px;
+border-radius:20px;
 text-decoration:none;
-transition:0.3s;
-}
-
-.contacto-btn:hover{
-background:#f6c1d0;
-color:#800020;
-}
-
-.mensaje-final{
-font-style:italic;
-color:#800020;
-}
-
-/* WHATSAPP */
-
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:15px 20px;
-border-radius:30px;
-text-decoration:none;
+margin:5px;
+display:inline-block;
 }
 
 /* RESPONSIVE */
 
-@media (max-width:768px){
-
-.menu{
-position:relative;
-width:100%;
-height:auto;
-}
-
-.contenido{
-margin-left:0;
-}
-
-.grid{
-grid-template-columns:1fr;
-}
-
-.afirmaciones-grid{
-grid-template-columns:1fr;
-}
-
-.hero h1{
-font-size:32px;
-}
-
+@media(max-width:768px){
+.contenido{margin-left:0;}
+.grid{grid-template-columns:1fr;}
+.afirmaciones-grid{grid-template-columns:1fr;}
+.menu{position:relative;width:100%;}
 }
 
 </style>
-
 </head>
 
 <body>
@@ -322,113 +213,105 @@ font-size:32px;
 <div class="contenido">
 
 <section class="hero">
-<div>
 <h1>STEP SOUL</h1>
-<p>Ropa deportiva femenina</p>
-</div>
 </section>
 
 <section class="historia">
 <h2>STEP SOUL</h2>
-
-<p>
-Step Soul nace desde un pensamiento: crear algo con propósito.
-Siempre me ha gustado inspirar a otras personas… si crecen, yo crezco.
-</p>
-
-<p>
-Me apasiona el deporte y las comunidades femeninas,
-y esa es la esencia de esta marca.
-</p>
-
-<p>
-No es solo ropa… es actitud, amor propio y evolución 💫
-</p>
-</section>
-
-<section class="frase">
-<p>"No es solo lo que usas, es cómo te sientes cuando lo llevas… recuérdenlo chicas."</p>
+<p>Inspirar, crecer y evolucionar 💖</p>
 </section>
 
 <section class="afirmaciones">
-<h2>Afirmaciones Step Soul ✨</h2>
-
+<h2>Afirmaciones ✨</h2>
 <div class="afirmaciones-grid">
-<p>💫 Soy fuerte, capaz y segura</p>
-<p>🌸 Mi cuerpo es perfecto para mí</p>
-<p>🔥 Dios está en mí y en mi vida</p>
-<p>💖 Me elijo todos los días</p>
-<p>✨ Confío en mi proceso</p>
-<p>🌈 Atraigo cosas hermosas</p>
+<p>💫 Soy fuerte</p>
+<p>💖 Me elijo</p>
+<p>🔥 Confío en mí</p>
+</div>
+</section>
+
+<!-- 🔥 COMUNIDAD -->
+<section class="comunidad">
+<h2>Comunidad Step Soul 💖</h2>
+
+<div class="input-area">
+<input type="text" id="inputMensaje" placeholder="Hoy me siento...">
+<button onclick="enviarMensaje()">Compartir</button>
 </div>
 
+<div id="muro" class="muro"></div>
 </section>
 
 <section class="productos" id="productos">
-
-<h2>Colección Step Soul</h2>
+<h2>Productos</h2>
 
 <div class="grid">
-
 <div class="producto">
 <img src="top-rosa.png">
-<h3>Top Soul Pink</h3>
-<p class="price">₡16 000</p>
-<a href="https://wa.me/50660866716?text=Hola quiero el Top Soul Pink" class="btn">Comprar</a>
+<p>Top Pink ₡16 000</p>
+<a href="https://wa.me/50660866716" class="btn">Comprar</a>
 </div>
-
-<div class="producto">
-<img src="top-blue.png">
-<h3>Top Soul Sky</h3>
-<p class="price">₡16 000</p>
-<a href="https://wa.me/50660866716?text=Hola quiero el Top Soul Sky" class="btn">Comprar</a>
-</div>
-
-<div class="producto">
-<img src="top-verde.png">
-<h3>Top Soul Olive</h3>
-<p class="price">₡16 000</p>
-<a href="https://wa.me/50660866716?text=Hola quiero el Top Soul Olive" class="btn">Comprar</a>
-</div>
-
 </div>
 
 </section>
 
 <section class="contacto" id="contacto">
-
-<h2>Contáctanos</h2>
-
-<p class="texto-contacto">
-Estamos aquí para ayudarte 💖  
-Escríbenos para consultas, pedidos o más información.
-</p>
-
-<div class="contacto-opciones">
-
-<a href="https://wa.me/50660866716?text=Hola quiero comprar en Step Soul" class="contacto-btn">
-📱 WhatsApp
-</a>
-
-<a href="mailto:stephaniaquiroz9@gmail.com" class="contacto-btn">
-📧 Correo
-</a>
-
-<a href="#" class="contacto-btn">
-📍 Costa Rica
-</a>
-
-</div>
-
-<p class="mensaje-final">
-Tu proceso es único… y estamos felices de ser parte de él ✨
-</p>
-
+<h2>Contacto</h2>
+<a href="https://wa.me/50660866716" class="contacto-btn">WhatsApp</a>
 </section>
 
 </div>
 
-<a href="https://wa.me/50660866716" class="whatsapp">WhatsApp</a>
+<!-- 🔥 FIREBASE -->
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, collection, addDoc, onSnapshot, query, orderBy } 
+from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBLo0MMerclF7ZlobSYeMnYlOteAj0e0tQ",
+  authDomain: "step-20a74.firebaseapp.com",
+  projectId: "step-20a74",
+  storageBucket: "step-20a74.firebasestorage.app",
+  messagingSenderId: "916240679694",
+  appId: "1:916240679694:web:8c81b11bebad9768d18d5f"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+const mensajesRef = collection(db, "mensajes");
+
+window.enviarMensaje = async function(){
+let input = document.getElementById("inputMensaje");
+let texto = input.value;
+
+if(texto.trim() === "") return;
+
+await addDoc(mensajesRef, {
+  texto: texto,
+  fecha: Date.now()
+});
+
+input.value = "";
+}
+
+const q = query(mensajesRef, orderBy("fecha", "desc"));
+
+onSnapshot(q, (snapshot) => {
+let muro = document.getElementById("muro");
+muro.innerHTML = "";
+
+snapshot.forEach(doc => {
+let div = document.createElement("div");
+div.className = "mensaje";
+div.textContent = doc.data().texto;
+muro.appendChild(div);
+});
+});
+
+</script>
 
 </body>
 </html>
