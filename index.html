@@ -30,6 +30,7 @@ height:100%;
 background:#800020;
 padding-top:30px;
 text-align:center;
+z-index:1000;
 }
 
 .menu img{width:130px;margin-bottom:30px;}
@@ -39,7 +40,6 @@ display:block;
 padding:15px;
 color:white;
 text-decoration:none;
-font-weight:500;
 }
 
 .menu a:hover{background:#a8324a;}
@@ -58,31 +58,42 @@ align-items:center;
 text-align:center;
 }
 
+.hero h1{font-size:48px;margin:0;}
+.hero p{opacity:0.9;}
+
+/* SECCIONES */
+
+section{padding:80px 20px;text-align:center;}
+
+h2{color:#800020;}
+
 /* HISTORIA */
 
-.historia{padding:80px 40px;background:#fff0f5;text-align:center;}
+.historia{background:#fff0f5;}
 
-.historia h2{color:#800020;}
-
-.historia p{max-width:700px;margin:auto;color:#4a0020;}
+.historia p{
+max-width:700px;
+margin:auto;
+color:#4a0020;
+line-height:1.6;
+}
 
 /* FRASE */
 
 .frase{
 background:#800020;
 color:white;
-padding:60px;
-text-align:center;
+font-style:italic;
 }
 
 /* AFIRMACIONES */
-
-.afirmaciones{text-align:center;padding:80px 20px;}
 
 .afirmaciones-grid{
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:20px;
+max-width:900px;
+margin:auto;
 }
 
 .afirmaciones-grid p{
@@ -90,7 +101,7 @@ background:#800020;
 color:white;
 padding:20px;
 border-radius:20px;
-cursor:pointer;
+transition:0.3s;
 }
 
 .afirmaciones-grid p:hover{
@@ -101,31 +112,29 @@ color:#800020;
 /* COMUNIDAD */
 
 .comunidad{
-padding:80px 20px;
-text-align:center;
 background:#fde8ef;
 }
-
-.comunidad h2{color:#800020;}
 
 .input-area{
 display:flex;
 justify-content:center;
 gap:10px;
 margin:20px 0;
+flex-wrap:wrap;
 }
 
 .input-area input{
-padding:10px;
+padding:12px;
 border-radius:20px;
 border:1px solid #ccc;
+width:250px;
 }
 
 .input-area button{
 background:#800020;
 color:white;
 border:none;
-padding:10px 20px;
+padding:12px 20px;
 border-radius:20px;
 cursor:pointer;
 }
@@ -147,21 +156,27 @@ color:#800020;
 
 /* PRODUCTOS */
 
-.productos{text-align:center;padding:80px 20px;}
-
 .grid{
 display:grid;
 grid-template-columns:repeat(3,1fr);
-gap:20px;
+gap:30px;
+max-width:1200px;
+margin:auto;
 }
 
 .producto{
 background:#fff0f5;
 padding:15px;
 border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
-.producto img{width:100%;height:250px;object-fit:cover;}
+.producto img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:10px;
+}
 
 .btn{
 background:#800020;
@@ -175,27 +190,38 @@ margin-top:10px;
 
 /* CONTACTO */
 
-.contacto{text-align:center;padding:80px 20px;background:#fff0f5;}
-
-.contacto h2{color:#800020;}
+.contacto{background:#fff0f5;}
 
 .contacto-btn{
 background:#800020;
 color:white;
-padding:10px 20px;
-border-radius:20px;
+padding:12px 25px;
+border-radius:25px;
 text-decoration:none;
 margin:5px;
 display:inline-block;
 }
 
+/* WHATSAPP */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px 20px;
+border-radius:30px;
+text-decoration:none;
+}
+
 /* RESPONSIVE */
 
 @media(max-width:768px){
+.menu{position:relative;width:100%;height:auto;}
 .contenido{margin-left:0;}
 .grid{grid-template-columns:1fr;}
 .afirmaciones-grid{grid-template-columns:1fr;}
-.menu{position:relative;width:100%;}
 }
 
 </style>
@@ -213,12 +239,21 @@ display:inline-block;
 <div class="contenido">
 
 <section class="hero">
+<div>
 <h1>STEP SOUL</h1>
+<p>Ropa deportiva femenina</p>
+</div>
 </section>
 
 <section class="historia">
 <h2>STEP SOUL</h2>
-<p>Inspirar, crecer y evolucionar 💖</p>
+<p>
+No es solo ropa… es actitud, amor propio y evolución 💖
+</p>
+</section>
+
+<section class="frase">
+<p>"No es solo lo que usas, es cómo te sientes cuando lo llevas."</p>
 </section>
 
 <section class="afirmaciones">
@@ -230,39 +265,63 @@ display:inline-block;
 </div>
 </section>
 
-<!-- 🔥 COMUNIDAD -->
+<!-- COMUNIDAD -->
 <section class="comunidad">
 <h2>Comunidad Step Soul 💖</h2>
 
 <div class="input-area">
-<input type="text" id="inputMensaje" placeholder="Hoy me siento...">
+<input id="inputMensaje" placeholder="Hoy me siento...">
 <button onclick="enviarMensaje()">Compartir</button>
 </div>
 
 <div id="muro" class="muro"></div>
 </section>
 
+<!-- PRODUCTOS -->
 <section class="productos" id="productos">
-<h2>Productos</h2>
+<h2>Colección</h2>
 
 <div class="grid">
+
 <div class="producto">
 <img src="top-rosa.png">
-<p>Top Pink ₡16 000</p>
+<h3>Top Pink</h3>
+<p>₡16 000</p>
 <a href="https://wa.me/50660866716" class="btn">Comprar</a>
 </div>
+
+<div class="producto">
+<img src="top-blue.png">
+<h3>Top Sky</h3>
+<p>₡16 000</p>
+<a href="https://wa.me/50660866716" class="btn">Comprar</a>
+</div>
+
+<div class="producto">
+<img src="top-verde.png">
+<h3>Top Olive</h3>
+<p>₡16 000</p>
+<a href="https://wa.me/50660866716" class="btn">Comprar</a>
+</div>
+
 </div>
 
 </section>
 
+<!-- CONTACTO -->
 <section class="contacto" id="contacto">
-<h2>Contacto</h2>
+<h2>Contáctanos</h2>
+
 <a href="https://wa.me/50660866716" class="contacto-btn">WhatsApp</a>
+<a href="mailto:stephaniaquiroz9@gmail.com" class="contacto-btn">Correo</a>
+
 </section>
 
 </div>
 
-<!-- 🔥 FIREBASE -->
+<a href="https://wa.me/50660866716" class="whatsapp">WhatsApp</a>
+
+<!-- FIREBASE -->
 <script type="module">
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
@@ -270,12 +329,12 @@ import { getFirestore, collection, addDoc, onSnapshot, query, orderBy }
 from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBLo0MMerclF7ZlobSYeMnYlOteAj0e0tQ",
-  authDomain: "step-20a74.firebaseapp.com",
-  projectId: "step-20a74",
-  storageBucket: "step-20a74.firebasestorage.app",
-  messagingSenderId: "916240679694",
-  appId: "1:916240679694:web:8c81b11bebad9768d18d5f"
+apiKey: "AIzaSyBLo0MMerclF7ZlobSYeMnYlOteAj0e0tQ",
+authDomain: "step-20a74.firebaseapp.com",
+projectId: "step-20a74",
+storageBucket: "step-20a74.firebasestorage.app",
+messagingSenderId: "916240679694",
+appId: "1:916240679694:web:8c81b11bebad9768d18d5f"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -284,29 +343,22 @@ const db = getFirestore(app);
 const mensajesRef = collection(db, "mensajes");
 
 window.enviarMensaje = async function(){
-let input = document.getElementById("inputMensaje");
-let texto = input.value;
+let texto = document.getElementById("inputMensaje").value;
+if(texto==="") return;
 
-if(texto.trim() === "") return;
-
-await addDoc(mensajesRef, {
-  texto: texto,
-  fecha: Date.now()
-});
-
-input.value = "";
+await addDoc(mensajesRef,{texto,fecha:Date.now()});
+document.getElementById("inputMensaje").value="";
 }
 
-const q = query(mensajesRef, orderBy("fecha", "desc"));
+const q = query(mensajesRef, orderBy("fecha","desc"));
 
-onSnapshot(q, (snapshot) => {
-let muro = document.getElementById("muro");
-muro.innerHTML = "";
-
-snapshot.forEach(doc => {
-let div = document.createElement("div");
-div.className = "mensaje";
-div.textContent = doc.data().texto;
+onSnapshot(q,(snapshot)=>{
+let muro=document.getElementById("muro");
+muro.innerHTML="";
+snapshot.forEach(doc=>{
+let div=document.createElement("div");
+div.className="mensaje";
+div.textContent=doc.data().texto;
 muro.appendChild(div);
 });
 });
