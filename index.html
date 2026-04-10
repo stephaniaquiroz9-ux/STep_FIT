@@ -111,10 +111,6 @@ color:#800020;
 
 /* COMUNIDAD */
 
-.comunidad{
-background:#fde8ef;
-}
-
 .input-area{
 display:flex;
 justify-content:center;
@@ -152,6 +148,17 @@ background:#fff0f5;
 padding:15px;
 border-radius:15px;
 color:#800020;
+}
+
+.mensaje button{
+margin-top:10px;
+background:#a8324a;
+color:white;
+border:none;
+padding:5px 10px;
+border-radius:10px;
+cursor:pointer;
+font-size:12px;
 }
 
 /* PRODUCTOS */
@@ -247,9 +254,7 @@ text-decoration:none;
 
 <section class="historia">
 <h2>STEP SOUL</h2>
-<p>
-No es solo ropa… es actitud, amor propio y evolución 💖
-</p>
+<p>No es solo ropa… es actitud, amor propio y evolución 💖</p>
 </section>
 
 <section class="frase">
@@ -325,7 +330,7 @@ No es solo ropa… es actitud, amor propio y evolución 💖
 <script type="module">
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getFirestore, collection, addDoc, onSnapshot, query, orderBy } 
+import { getFirestore, collection, addDoc, onSnapshot, query, orderBy, deleteDoc, doc } 
 from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -350,15 +355,32 @@ await addDoc(mensajesRef,{texto,fecha:Date.now()});
 document.getElementById("inputMensaje").value="";
 }
 
+window.eliminarMensaje = async function(id){
+await deleteDoc(doc(db,"mensajes",id));
+}
+
+const LIMITE = 24*60*60*1000;
+
 const q = query(mensajesRef, orderBy("fecha","desc"));
 
 onSnapshot(q,(snapshot)=>{
 let muro=document.getElementById("muro");
 muro.innerHTML="";
-snapshot.forEach(doc=>{
+
+snapshot.forEach(docSnap=>{
+let data=docSnap.data();
+
+if(Date.now()-data.fecha > LIMITE) return;
+
 let div=document.createElement("div");
 div.className="mensaje";
-div.textContent=doc.data().texto;
+
+div.innerHTML = `
+${data.texto}
+<br>
+<button onclick="eliminarMensaje('${docSnap.id}')">Eliminar</button>
+`;
+
 muro.appendChild(div);
 });
 });
