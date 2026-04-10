@@ -20,7 +20,6 @@ background:#fde8ef;
 color:#4a0020;
 }
 
-/* TITULOS */
 h1,h2{
 font-family:'Playfair Display', serif;
 }
@@ -36,7 +35,6 @@ height:100%;
 background:#800020;
 padding-top:30px;
 text-align:center;
-z-index:1000;
 }
 
 .menu img{width:130px;margin-bottom:30px;}
@@ -46,64 +44,32 @@ display:block;
 padding:15px;
 color:white;
 text-decoration:none;
-transition:0.3s;
 }
 
-.menu a:hover{
-background:#a8324a;
-}
+.menu a:hover{background:#a8324a;}
 
-/* CONTENIDO */
-
-.contenido{
-margin-left:220px;
-}
+.contenido{margin-left:220px;}
 
 /* HERO */
 
 .hero{
 height:100vh;
-background:linear-gradient(rgba(128,0,32,0.8),rgba(128,0,32,0.8)),
-url('https://images.unsplash.com/photo-1518611012118-fd3c9f89f9b6');
-background-size:cover;
-background-position:center;
+background:#800020;
 color:white;
 display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:20px;
-}
-
-.hero h1{
-font-size:55px;
-margin:0;
-animation:fadeUp 1s ease;
-}
-
-.hero p{
-font-size:20px;
-margin-top:15px;
-animation:fadeUp 1.5s ease;
 }
 
 .hero a{
-margin-top:25px;
+margin-top:20px;
 display:inline-block;
-background:#f6c1d0;
+background:white;
 color:#800020;
 padding:12px 30px;
 border-radius:30px;
 text-decoration:none;
-font-weight:bold;
-animation:fadeUp 2s ease;
-}
-
-/* ANIMACION */
-
-@keyframes fadeUp{
-from{opacity:0;transform:translateY(30px);}
-to{opacity:1;}
 }
 
 /* SECCIONES */
@@ -113,26 +79,13 @@ padding:100px 20px;
 text-align:center;
 }
 
-/* HISTORIA */
-
-.historia{
-background:#fff0f5;
-}
-
-.historia p{
-max-width:700px;
-margin:auto;
-line-height:1.8;
-font-weight:300;
-}
-
 /* FRASE */
 
 .frase{
 background:#800020;
 color:white;
 font-style:italic;
-font-size:24px;
+font-size:22px;
 }
 
 /* AFIRMACIONES */
@@ -156,7 +109,6 @@ transition:0.3s;
 .afirmaciones-grid p:hover{
 background:#f6c1d0;
 color:#800020;
-transform:translateY(-5px);
 }
 
 /* COMUNIDAD */
@@ -189,28 +141,29 @@ max-width:600px;
 margin:auto;
 display:flex;
 flex-direction:column;
-gap:10px;
+gap:15px;
 }
 
 .mensaje{
-background:#fff0f5;
+background:white;
 padding:15px;
-border-radius:15px;
+border-radius:20px;
+box-shadow:0 5px 15px rgba(0,0,0,0.05);
+text-align:left;
 }
 
-/* CATALOGO */
-
-.catalogo{
-background:#fff0f5;
+.acciones{
+margin-top:10px;
+display:flex;
+gap:10px;
 }
 
-.catalogo a{
-background:#800020;
-color:white;
-padding:15px 30px;
-border-radius:30px;
-text-decoration:none;
-font-size:18px;
+.acciones button{
+background:none;
+border:none;
+cursor:pointer;
+font-size:16px;
+color:#800020;
 }
 
 /* CONTACTO */
@@ -220,7 +173,6 @@ display:flex;
 justify-content:center;
 gap:20px;
 flex-wrap:wrap;
-margin:30px 0;
 }
 
 .contacto-btn{
@@ -229,11 +181,6 @@ color:white;
 padding:12px 25px;
 border-radius:25px;
 text-decoration:none;
-}
-
-.contacto-btn:hover{
-background:#f6c1d0;
-color:#800020;
 }
 
 /* WHATSAPP */
@@ -249,14 +196,6 @@ border-radius:30px;
 text-decoration:none;
 }
 
-/* RESPONSIVE */
-
-@media(max-width:768px){
-.menu{position:relative;width:100%;height:auto;}
-.contenido{margin-left:0;}
-.afirmaciones-grid{grid-template-columns:1fr;}
-}
-
 </style>
 </head>
 
@@ -265,7 +204,6 @@ text-decoration:none;
 <div class="menu">
 <img src="SOUL.png">
 <a href="#inicio">Inicio</a>
-<a href="#historia">Historia</a>
 <a href="#catalogo">Colección</a>
 <a href="#contacto">Contacto</a>
 </div>
@@ -276,39 +214,18 @@ text-decoration:none;
 <section class="hero" id="inicio">
 <div>
 <h1>STEP SOUL</h1>
-<p>No es solo ropa… es cómo te sientes contigo misma 💖</p>
-<a href="https://catalogo.treinta.co/stepsoul-7b892" target="_blank">
-Ver colección ✨
-</a>
+<p>Ropa deportiva femenina</p>
+<a href="https://catalogo.treinta.co/stepsoul-7b892" target="_blank">Ver colección</a>
 </div>
-</section>
-
-<!-- HISTORIA -->
-<section class="historia" id="historia">
-<h2>Tu energía, tu esencia</h2>
-
-<p>
-Step Soul nace desde un pensamiento: crear algo con propósito.
-Siempre me ha gustado inspirar… si crecen, yo crezco.
-</p>
-
-<p>
-Esta marca es para mujeres que están en su proceso,
-que están creciendo, sanando y evolucionando.
-</p>
-
-<p>
-No es solo ropa… es recordarte quién eres 💫
-</p>
 </section>
 
 <!-- FRASE -->
 <section class="frase">
-<p>"No es solo lo que usas… es cómo te sientes cuando lo llevas"</p>
+<p>"No es solo lo que usas… es la forma en la que te habitas cuando lo llevas"</p>
 </section>
 
 <!-- AFIRMACIONES -->
-<section class="afirmaciones">
+<section>
 <h2>Afirmaciones Step Soul ✨</h2>
 
 <div class="afirmaciones-grid">
@@ -319,57 +236,125 @@ No es solo ropa… es recordarte quién eres 💫
 <p>✨ Confío en mi proceso</p>
 <p>🌈 Atraigo cosas hermosas</p>
 </div>
-
 </section>
 
 <!-- COMUNIDAD -->
-<section class="comunidad">
-<h2>¿Cómo te sientes hoy? 💖</h2>
+<section>
+<h2>Comunidad Step Soul ♡</h2>
 
 <div class="input-area">
-<input placeholder="Escribe aquí...">
-<button onclick="alert('Gracias por compartir 💖')">Compartir</button>
+<input id="inputMensaje" placeholder="¿Cómo te sientes hoy?">
+<button onclick="enviarMensaje()">Compartir</button>
 </div>
 
+<div id="muro" class="muro"></div>
 </section>
 
 <!-- CATALOGO -->
-<section class="catalogo" id="catalogo">
-
-<h2>Descubre la colección</h2>
-
-<p>
-Cada prenda está diseñada para hacerte sentir segura, hermosa y poderosa ✨
-</p>
-
-<br>
-
-<a href="https://catalogo.treinta.co/stepsoul-7b892" target="_blank">
-Ver catálogo completo 💖
-</a>
-
+<section id="catalogo">
+<h2>Colección</h2>
+<a href="https://catalogo.treinta.co/stepsoul-7b892" target="_blank">Ver catálogo completo</a>
 </section>
 
 <!-- CONTACTO -->
-<section class="contacto" id="contacto">
+<section id="contacto">
 
 <h2>Contáctanos</h2>
 
 <div class="contacto-opciones">
-<a href="https://wa.me/50660866716?text=Hola quiero comprar en Step Soul" class="contacto-btn">📱 WhatsApp</a>
-<a href="mailto:stephaniaquiroz9@gmail.com" class="contacto-btn">📧 Correo</a>
-<a href="#" class="contacto-btn">📍 Costa Rica</a>
+<a href="https://wa.me/50660866716" class="contacto-btn">WhatsApp</a>
+<a href="mailto:stephaniaquiroz9@gmail.com" class="contacto-btn">Correo</a>
 </div>
 
-<p>
-Tu proceso es único… y estamos felices de ser parte de él ✨
-</p>
+<p>Tu proceso es único… y estamos felices de ser parte de él ✨</p>
 
 </section>
 
 </div>
 
 <a href="https://wa.me/50660866716" class="whatsapp">WhatsApp</a>
+
+<!-- FIREBASE FUNCIONAL -->
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, collection, addDoc, onSnapshot, query, orderBy, deleteDoc, doc, updateDoc, increment } 
+from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+const firebaseConfig = {
+apiKey: "AIzaSyBLo0MMerclF7ZlobSYeMnYlOteAj0e0tQ",
+authDomain: "step-20a74.firebaseapp.com",
+projectId: "step-20a74"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+const mensajesRef = collection(db, "mensajes");
+
+/* ENVIAR */
+window.enviarMensaje = async function(){
+let texto = document.getElementById("inputMensaje").value;
+if(!texto) return;
+
+await addDoc(mensajesRef,{
+texto,
+fecha: Date.now(),
+likes:0
+});
+
+document.getElementById("inputMensaje").value="";
+}
+
+/* LIKE */
+window.darLike = async function(id){
+await updateDoc(doc(db,"mensajes",id),{
+likes: increment(1)
+});
+}
+
+/* ELIMINAR (SOLO TÚ) */
+window.eliminarMensaje = async function(id){
+let clave = prompt("Clave admin:");
+if(clave === "step123"){   // 🔐 cambia esta clave
+await deleteDoc(doc(db,"mensajes",id));
+}else{
+alert("No autorizado");
+}
+}
+
+/* MOSTRAR */
+const LIMITE = 24*60*60*1000;
+
+const q = query(mensajesRef, orderBy("fecha","desc"));
+
+onSnapshot(q,(snapshot)=>{
+let muro = document.getElementById("muro");
+muro.innerHTML="";
+
+snapshot.forEach(docSnap=>{
+let data = docSnap.data();
+
+/* SOLO 24H */
+if(Date.now() - data.fecha > LIMITE) return;
+
+let div = document.createElement("div");
+div.className="mensaje";
+
+div.innerHTML = `
+<p>${data.texto}</p>
+<div class="acciones">
+<button onclick="darLike('${docSnap.id}')">♡ ${data.likes || 0}</button>
+<button onclick="eliminarMensaje('${docSnap.id}')">🗑</button>
+</div>
+`;
+
+muro.appendChild(div);
+
+});
+});
+
+</script>
 
 </body>
 </html>
