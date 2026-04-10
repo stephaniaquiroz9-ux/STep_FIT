@@ -7,7 +7,7 @@
 
 <title>STEP SOUL</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
@@ -17,11 +17,6 @@ body{
 margin:0;
 font-family:'Poppins', sans-serif;
 background:#fde8ef;
-color:#4a0020;
-}
-
-h1,h2{
-font-family:'Playfair Display', serif;
 }
 
 /* MENU */
@@ -37,7 +32,10 @@ padding-top:30px;
 text-align:center;
 }
 
-.menu img{width:130px;margin-bottom:30px;}
+.menu img{
+width:130px;
+margin-bottom:30px;
+}
 
 .menu a{
 display:block;
@@ -46,14 +44,20 @@ color:white;
 text-decoration:none;
 }
 
-.menu a:hover{background:#a8324a;}
+.menu a:hover{
+background:#a8324a;
+}
 
-.contenido{margin-left:220px;}
+/* CONTENIDO */
+
+.contenido{
+margin-left:220px;
+}
 
 /* HERO */
 
 .hero{
-height:100vh;
+height:400px;
 background:#800020;
 color:white;
 display:flex;
@@ -62,21 +66,33 @@ align-items:center;
 text-align:center;
 }
 
-.hero a{
-margin-top:20px;
-display:inline-block;
-background:white;
-color:#800020;
-padding:12px 30px;
-border-radius:30px;
-text-decoration:none;
+.hero h1{
+font-size:48px;
+margin:0;
+}
+
+.hero p{
+margin-top:10px;
 }
 
 /* SECCIONES */
 
 section{
-padding:100px 20px;
+padding:90px 20px;
 text-align:center;
+}
+
+/* HISTORIA */
+
+.historia{
+background:#fff0f5;
+}
+
+.historia p{
+max-width:700px;
+margin:auto;
+line-height:1.7;
+color:#4a0020;
 }
 
 /* FRASE */
@@ -103,12 +119,6 @@ background:#800020;
 color:white;
 padding:25px;
 border-radius:25px;
-transition:0.3s;
-}
-
-.afirmaciones-grid p:hover{
-background:#f6c1d0;
-color:#800020;
 }
 
 /* COMUNIDAD */
@@ -147,8 +157,7 @@ gap:15px;
 .mensaje{
 background:white;
 padding:15px;
-border-radius:20px;
-box-shadow:0 5px 15px rgba(0,0,0,0.05);
+border-radius:15px;
 text-align:left;
 }
 
@@ -162,11 +171,14 @@ gap:10px;
 background:none;
 border:none;
 cursor:pointer;
-font-size:16px;
 color:#800020;
 }
 
 /* CONTACTO */
+
+.contacto{
+background:#fff0f5;
+}
 
 .contacto-opciones{
 display:flex;
@@ -196,6 +208,14 @@ border-radius:30px;
 text-decoration:none;
 }
 
+/* RESPONSIVE */
+
+@media(max-width:768px){
+.menu{position:relative;width:100%;height:auto;}
+.contenido{margin-left:0;}
+.afirmaciones-grid{grid-template-columns:1fr;}
+}
+
 </style>
 </head>
 
@@ -204,7 +224,6 @@ text-decoration:none;
 <div class="menu">
 <img src="SOUL.png">
 <a href="#inicio">Inicio</a>
-<a href="#catalogo">Colección</a>
 <a href="#contacto">Contacto</a>
 </div>
 
@@ -215,8 +234,21 @@ text-decoration:none;
 <div>
 <h1>STEP SOUL</h1>
 <p>Ropa deportiva femenina</p>
-<a href="https://catalogo.treinta.co/stepsoul-7b892" target="_blank">Ver colección</a>
 </div>
+</section>
+
+<!-- HISTORIA -->
+<section class="historia">
+<h2>STEP SOUL</h2>
+
+<p>
+Step Soul nace desde un pensamiento: crear algo con propósito.
+Siempre me ha gustado inspirar… si crecen, yo crezco.
+</p>
+
+<p>
+No es solo ropa… es actitud, amor propio y evolución ♡
+</p>
 </section>
 
 <!-- FRASE -->
@@ -236,6 +268,7 @@ text-decoration:none;
 <p>✨ Confío en mi proceso</p>
 <p>🌈 Atraigo cosas hermosas</p>
 </div>
+
 </section>
 
 <!-- COMUNIDAD -->
@@ -250,14 +283,8 @@ text-decoration:none;
 <div id="muro" class="muro"></div>
 </section>
 
-<!-- CATALOGO -->
-<section id="catalogo">
-<h2>Colección</h2>
-<a href="https://catalogo.treinta.co/stepsoul-7b892" target="_blank">Ver catálogo completo</a>
-</section>
-
 <!-- CONTACTO -->
-<section id="contacto">
+<section class="contacto" id="contacto">
 
 <h2>Contáctanos</h2>
 
@@ -274,7 +301,7 @@ text-decoration:none;
 
 <a href="https://wa.me/50660866716" class="whatsapp">WhatsApp</a>
 
-<!-- FIREBASE FUNCIONAL -->
+<!-- FIREBASE -->
 <script type="module">
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
@@ -313,10 +340,10 @@ likes: increment(1)
 });
 }
 
-/* ELIMINAR (SOLO TÚ) */
+/* ELIMINAR */
 window.eliminarMensaje = async function(id){
 let clave = prompt("Clave admin:");
-if(clave === "step123"){   // 🔐 cambia esta clave
+if(clave === "step123"){
 await deleteDoc(doc(db,"mensajes",id));
 }else{
 alert("No autorizado");
@@ -335,7 +362,6 @@ muro.innerHTML="";
 snapshot.forEach(docSnap=>{
 let data = docSnap.data();
 
-/* SOLO 24H */
 if(Date.now() - data.fecha > LIMITE) return;
 
 let div = document.createElement("div");
@@ -350,7 +376,6 @@ div.innerHTML = `
 `;
 
 muro.appendChild(div);
-
 });
 });
 
