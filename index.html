@@ -256,8 +256,7 @@ color:#800020;
 <body>
 
 <!-- 🎵 MÚSICA -->
-<audio id="musica" autoplay loop></audio>
-</audio>
+ <audio id="musica"></audio>
 
 <!-- MENU -->
 <div class="menu">
@@ -275,10 +274,6 @@ color:#800020;
 <div>
 <h1>STEP SOUL</h1>
 <p>Ropa deportiva femenina</p>
-
-<button class="btn-musica" onclick="toggleMusica()">
-🎵 Activar experiencia Step Soul
-</button>
 
 </div>
 </section>
@@ -471,28 +466,32 @@ const canciones = [
 let index = 0;
 let musica = document.getElementById("musica");
 
-musica.volume = 0.20; // 💎 volumen bajo estilo lujo
+musica.volume = 0.20;
 
-function reproducir(){
+function playMusic(){
 musica.src = canciones[index];
 musica.play().catch(()=>{});
 }
 
-/* cambiar canción cuando termina */
+/* siguiente canción */
 musica.addEventListener("ended", ()=>{
 index = (index + 1) % canciones.length;
-reproducir();
+playMusic();
 });
 
-/* intento automático al entrar */
+/* INTENTO AUTOMÁTICO */
 window.addEventListener("load", ()=>{
-reproducir();
+playMusic();
 });
 
-/* fallback si navegador bloquea */
+/* FALLBACK SI NAVEGADOR BLOQUEA */
 document.addEventListener("click", ()=>{
-reproducir();
-});
+playMusic();
+}, { once: true });
+
+document.addEventListener("scroll", ()=>{
+playMusic();
+}, { once: true });
 </script>
 </body>
 </html>
