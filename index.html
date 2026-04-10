@@ -256,8 +256,7 @@ color:#800020;
 <body>
 
 <!-- 🎵 MÚSICA -->
-<audio id="musica" loop>
-  <source src="https://cdn.pixabay.com/download/audio/2023/05/02/audio_6c1b7f5f8a.mp3?filename=soft-ambient-piano-141099.mp3" type="audio/mpeg">
+<audio id="musica" autoplay loop></audio>
 </audio>
 
 <!-- MENU -->
@@ -462,6 +461,38 @@ item.classList.toggle("activa");
 });
 });
 </script>
+<script>
+const canciones = [
+"https://cdn.pixabay.com/download/audio/2023/06/20/audio_8f4d2c2c2b.mp3?filename=indie-dream-pop-ambient-142983.mp3",
+"https://cdn.pixabay.com/download/audio/2022/08/08/audio_c8b6b6b0a8.mp3?filename=lofi-indie-ambient-112191.mp3",
+"https://cdn.pixabay.com/download/audio/2022/03/15/audio_115b9b6c7b.mp3?filename=soft-piano-ambient-110397.mp3"
+];
 
+let index = 0;
+let musica = document.getElementById("musica");
+
+musica.volume = 0.20; // 💎 volumen bajo estilo lujo
+
+function reproducir(){
+musica.src = canciones[index];
+musica.play().catch(()=>{});
+}
+
+/* cambiar canción cuando termina */
+musica.addEventListener("ended", ()=>{
+index = (index + 1) % canciones.length;
+reproducir();
+});
+
+/* intento automático al entrar */
+window.addEventListener("load", ()=>{
+reproducir();
+});
+
+/* fallback si navegador bloquea */
+document.addEventListener("click", ()=>{
+reproducir();
+});
+</script>
 </body>
 </html>
