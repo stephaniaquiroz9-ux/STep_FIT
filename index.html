@@ -7,7 +7,7 @@
 
 <title>STEP SOUL</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
 
@@ -19,6 +19,7 @@ font-family:'Poppins', sans-serif;
 background:#fde8ef;
 }
 
+/* TITULOS */
 h1,h2{
 font-family:'Playfair Display', serif;
 }
@@ -44,11 +45,17 @@ display:block;
 padding:15px;
 color:white;
 text-decoration:none;
+transition:0.3s;
 }
 
-.menu a:hover{background:#a8324a;}
+.menu a:hover{
+background:#a8324a;
+}
 
-.contenido{margin-left:220px;}
+/* CONTENIDO */
+.contenido{
+margin-left:220px;
+}
 
 /* HERO */
 
@@ -60,21 +67,41 @@ display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
+padding-top:40px;
+}
+
+.hero h1{
+font-size:50px;
+margin:0;
+animation:fadeUp 1s ease;
+}
+
+.hero p{
+margin-top:10px;
+font-size:18px;
+opacity:0.9;
+animation:fadeUp 1.3s ease;
 }
 
 /* SECCIONES */
 
-section{padding:80px 20px;text-align:center;}
+section{
+padding:100px 20px;
+text-align:center;
+}
 
 /* HISTORIA */
 
-.historia{background:#fff0f5;}
+.historia{
+background:#fff0f5;
+}
 
 .historia p{
 max-width:700px;
 margin:auto;
 line-height:1.8;
 color:#4a0020;
+font-weight:300;
 }
 
 /* FRASE */
@@ -83,6 +110,7 @@ color:#4a0020;
 background:#800020;
 color:white;
 font-style:italic;
+font-size:22px;
 }
 
 /* AFIRMACIONES */
@@ -147,11 +175,11 @@ background:#fff0f5;
 padding:15px;
 border-radius:15px;
 color:#800020;
-animation:fadeIn 0.5s ease;
+animation:fadeUp 0.5s ease;
 }
 
-@keyframes fadeIn{
-from{opacity:0;transform:translateY(10px);}
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(20px);}
 to{opacity:1;}
 }
 
@@ -185,13 +213,18 @@ margin:auto;
 background:#fff0f5;
 padding:15px;
 border-radius:15px;
+transition:0.3s;
+}
+
+.producto:hover{
+transform:translateY(-8px);
 }
 
 .producto img{
 width:100%;
-height:250px;
+height:260px;
 object-fit:cover;
-border-radius:10px;
+border-radius:12px;
 }
 
 .btn{
@@ -206,7 +239,9 @@ margin-top:10px;
 
 /* CONTACTO */
 
-.contacto{background:#fff0f5;}
+.contacto{
+background:#fff0f5;
+}
 
 .contacto-opciones{
 display:flex;
@@ -270,23 +305,28 @@ text-decoration:none;
 
 <div class="contenido">
 
+<!-- HERO -->
 <section class="hero" id="inicio">
+<div>
 <h1>STEP SOUL</h1>
+<p>Ropa deportiva femenina</p>
+</div>
 </section>
 
+<!-- HISTORIA -->
 <section class="historia">
 <h2>STEP SOUL</h2>
-
 <p>Step Soul nace desde un pensamiento: crear algo con propósito...</p>
 <p>Me apasiona el deporte y las comunidades femeninas...</p>
 <p>No es solo ropa… es actitud, amor propio y evolución 💫</p>
-
 </section>
 
+<!-- FRASE -->
 <section class="frase">
 <p>"No es solo lo que usas, es cómo te sientes cuando lo llevas…"</p>
 </section>
 
+<!-- AFIRMACIONES -->
 <section class="afirmaciones">
 <h2>Afirmaciones Step Soul ✨</h2>
 
@@ -361,73 +401,6 @@ Tu proceso es único… y estamos felices de ser parte de él ✨
 </div>
 
 <a href="https://wa.me/50660866716" class="whatsapp">WhatsApp</a>
-
-<!-- FIREBASE -->
-<script type="module">
-
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getFirestore, collection, addDoc, onSnapshot, query, orderBy, deleteDoc, doc, updateDoc, increment } 
-from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-
-const firebaseConfig = {
-apiKey: "AIzaSyBLo0MMerclF7ZlobSYeMnYlOteAj0e0tQ",
-authDomain: "step-20a74.firebaseapp.com",
-projectId: "step-20a74",
-storageBucket: "step-20a74.firebasestorage.app",
-messagingSenderId: "916240679694",
-appId: "1:916240679694:web:8c81b11bebad9768d18d5f"
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
-const mensajesRef = collection(db, "mensajes");
-
-window.enviarMensaje = async function(){
-let texto = document.getElementById("inputMensaje").value;
-if(texto==="") return;
-
-await addDoc(mensajesRef,{texto,fecha:Date.now(),likes:0});
-document.getElementById("inputMensaje").value="";
-}
-
-window.darLike = async function(id){
-await updateDoc(doc(db,"mensajes",id),{likes:increment(1)});
-}
-
-window.eliminarMensaje = async function(id){
-await deleteDoc(doc(db,"mensajes",id));
-}
-
-const LIMITE = 24*60*60*1000;
-
-const q = query(mensajesRef, orderBy("fecha","desc"));
-
-onSnapshot(q,(snapshot)=>{
-let muro=document.getElementById("muro");
-muro.innerHTML="";
-
-snapshot.forEach(docSnap=>{
-let data=docSnap.data();
-
-if(Date.now()-data.fecha > LIMITE) return;
-
-let div=document.createElement("div");
-div.className="mensaje";
-
-div.innerHTML = `
-<p>${data.texto}</p>
-<div class="acciones">
-<button onclick="darLike('${docSnap.id}')">❤️ ${data.likes || 0}</button>
-<button onclick="eliminarMensaje('${docSnap.id}')">🗑</button>
-</div>
-`;
-
-muro.appendChild(div);
-});
-});
-
-</script>
 
 </body>
 </html>
