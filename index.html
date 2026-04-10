@@ -7,10 +7,13 @@
 
 <title>STEP SOUL</title>
 
-<!-- FUENTE ELEGANTE -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+
+html{
+scroll-behavior:smooth;
+}
 
 body{
 margin:0;
@@ -215,6 +218,53 @@ transition:0.3s;
 background:#a8324a;
 }
 
+/* CONTACTO */
+
+.contacto{
+padding:80px 20px;
+text-align:center;
+background:#fff0f5;
+}
+
+.contacto h2{
+color:#800020;
+font-size:32px;
+margin-bottom:15px;
+}
+
+.texto-contacto{
+font-size:18px;
+color:#4a0020;
+margin-bottom:30px;
+}
+
+.contacto-opciones{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin-bottom:30px;
+}
+
+.contacto-btn{
+background:#800020;
+color:white;
+padding:12px 25px;
+border-radius:25px;
+text-decoration:none;
+transition:0.3s;
+}
+
+.contacto-btn:hover{
+background:#f6c1d0;
+color:#800020;
+}
+
+.mensaje-final{
+font-style:italic;
+color:#800020;
+}
+
 /* WHATSAPP */
 
 .whatsapp{
@@ -243,7 +293,7 @@ margin-left:0;
 }
 
 .grid{
-grid-template-columns:repeat(1,1fr);
+grid-template-columns:1fr;
 }
 
 .afirmaciones-grid{
@@ -266,7 +316,7 @@ font-size:32px;
 <img src="SOUL.png">
 <a href="#">Inicio</a>
 <a href="#productos">Productos</a>
-<a href="#">Contacto</a>
+<a href="#contacto">Contacto</a>
 </div>
 
 <div class="contenido">
@@ -279,20 +329,20 @@ font-size:32px;
 </section>
 
 <section class="historia">
-<h2>STep SOUL</h2>
+<h2>STEP SOUL</h2>
 
 <p>
-STep SOUL nace desde un breve pensamiento, un dia analizando que puedo emprender?, siempre me ah gustado inspirar ah otras personas, si crecen yo crezco, 
-me gusta mucho el deporte y las comunidades femeninas, esa es mi esencia. 
+Step Soul nace desde un pensamiento: crear algo con propósito.
+Siempre me ha gustado inspirar a otras personas… si crecen, yo crezco.
 </p>
 
 <p>
-No es solo ropa, es una forma de recordarte quién eres
-y hacia dónde vas. Por que? Porque quiero que te veas hermosa, y lo mas valioso que tienes es la actitud. 
+Me apasiona el deporte y las comunidades femeninas,
+y esa es la esencia de esta marca.
 </p>
 
 <p>
-Cada prenda representa seguridad, amor propio y evolución para las personas💫
+No es solo ropa… es actitud, amor propio y evolución 💫
 </p>
 </section>
 
@@ -306,7 +356,7 @@ Cada prenda representa seguridad, amor propio y evolución para las personas💫
 <div class="afirmaciones-grid">
 <p>💫 Soy fuerte, capaz y segura</p>
 <p>🌸 Mi cuerpo es perfecto para mí</p>
-<p>🔥 Dios esta en mi y en mi vida</p>
+<p>🔥 Dios está en mí y en mi vida</p>
 <p>💖 Me elijo todos los días</p>
 <p>✨ Confío en mi proceso</p>
 <p>🌈 Atraigo cosas hermosas</p>
@@ -316,7 +366,7 @@ Cada prenda representa seguridad, amor propio y evolución para las personas💫
 
 <section class="productos" id="productos">
 
-<h2>Colección STep SOUL</h2>
+<h2>Colección Step Soul</h2>
 
 <div class="grid">
 
@@ -344,7 +394,8 @@ Cada prenda representa seguridad, amor propio y evolución para las personas💫
 </div>
 
 </section>
-  <section class="contacto" id="contacto">
+
+<section class="contacto" id="contacto">
 
 <h2>Contáctanos</h2>
 
@@ -355,7 +406,7 @@ Escríbenos para consultas, pedidos o más información.
 
 <div class="contacto-opciones">
 
-<a href="https://wa.me/50660866716?text=Hola, quiero información sobre Step Soul" class="contacto-btn">
+<a href="https://wa.me/50660866716?text=Hola quiero comprar en Step Soul" class="contacto-btn">
 📱 WhatsApp
 </a>
 
