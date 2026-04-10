@@ -7,7 +7,7 @@
 
 <title>STEP SOUL</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
 
@@ -17,6 +17,12 @@ body{
 margin:0;
 font-family:'Poppins', sans-serif;
 background:#fde8ef;
+}
+
+/* TITULOS */
+h1,h2{
+font-family:'Playfair Display', serif;
+letter-spacing:1px;
 }
 
 /* MENU */
@@ -58,14 +64,9 @@ align-items:center;
 text-align:center;
 }
 
-.hero h1{font-size:48px;margin:0;}
-.hero p{opacity:0.9;}
-
 /* SECCIONES */
 
 section{padding:80px 20px;text-align:center;}
-
-h2{color:#800020;}
 
 /* HISTORIA */
 
@@ -74,8 +75,10 @@ h2{color:#800020;}
 .historia p{
 max-width:700px;
 margin:auto;
+font-size:16px;
+line-height:1.8;
 color:#4a0020;
-line-height:1.6;
+font-weight:300;
 }
 
 /* FRASE */
@@ -91,7 +94,7 @@ font-style:italic;
 .afirmaciones-grid{
 display:grid;
 grid-template-columns:repeat(3,1fr);
-gap:20px;
+gap:25px;
 max-width:900px;
 margin:auto;
 }
@@ -99,14 +102,15 @@ margin:auto;
 .afirmaciones-grid p{
 background:#800020;
 color:white;
-padding:20px;
-border-radius:20px;
+padding:25px;
+border-radius:25px;
 transition:0.3s;
 }
 
 .afirmaciones-grid p:hover{
 background:#f6c1d0;
 color:#800020;
+transform:translateY(-5px);
 }
 
 /* COMUNIDAD */
@@ -148,17 +152,35 @@ background:#fff0f5;
 padding:15px;
 border-radius:15px;
 color:#800020;
+animation:fadeIn 0.6s ease;
 }
 
-.mensaje button{
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(10px);}
+to{opacity:1;}
+}
+
+/* ACCIONES */
+
+.acciones{
 margin-top:10px;
-background:#a8324a;
+display:flex;
+gap:10px;
+justify-content:center;
+}
+
+.acciones button{
+background:#800020;
 color:white;
 border:none;
-padding:5px 10px;
-border-radius:10px;
+padding:6px 12px;
+border-radius:20px;
 cursor:pointer;
-font-size:12px;
+}
+
+.acciones button:hover{
+background:#f6c1d0;
+color:#800020;
 }
 
 /* PRODUCTOS */
@@ -175,7 +197,6 @@ margin:auto;
 background:#fff0f5;
 padding:15px;
 border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
 .producto img{
@@ -191,13 +212,19 @@ color:white;
 padding:10px 20px;
 border-radius:20px;
 text-decoration:none;
-display:inline-block;
-margin-top:10px;
 }
 
 /* CONTACTO */
 
 .contacto{background:#fff0f5;}
+
+.contacto-opciones{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin:30px 0;
+}
 
 .contacto-btn{
 background:#800020;
@@ -205,8 +232,16 @@ color:white;
 padding:12px 25px;
 border-radius:25px;
 text-decoration:none;
-margin:5px;
-display:inline-block;
+}
+
+.contacto-btn:hover{
+background:#f6c1d0;
+color:#800020;
+}
+
+.mensaje-final{
+color:#800020;
+font-style:italic;
 }
 
 /* WHATSAPP */
@@ -246,28 +281,34 @@ text-decoration:none;
 <div class="contenido">
 
 <section class="hero">
-<div>
 <h1>STEP SOUL</h1>
-<p>Ropa deportiva femenina</p>
-</div>
 </section>
 
 <section class="historia">
 <h2>STEP SOUL</h2>
-<p>No es solo ropa… es actitud, amor propio y evolución 💖</p>
+
+<p>Step Soul nace desde un pensamiento: crear algo con propósito...</p>
+<p>Me apasiona el deporte y las comunidades femeninas...</p>
+<p>No es solo ropa… es actitud, amor propio y evolución 💫</p>
+
 </section>
 
 <section class="frase">
-<p>"No es solo lo que usas, es cómo te sientes cuando lo llevas."</p>
+<p>"No es solo lo que usas, es cómo te sientes cuando lo llevas…"</p>
 </section>
 
 <section class="afirmaciones">
-<h2>Afirmaciones ✨</h2>
+<h2>Afirmaciones Step Soul ✨</h2>
+
 <div class="afirmaciones-grid">
-<p>💫 Soy fuerte</p>
-<p>💖 Me elijo</p>
-<p>🔥 Confío en mí</p>
+<p>💫 Soy fuerte, capaz y segura</p>
+<p>🌸 Mi cuerpo es perfecto para mí</p>
+<p>🔥 Dios está en mí y en mi vida</p>
+<p>💖 Me elijo todos los días</p>
+<p>✨ Confío en mi proceso</p>
+<p>🌈 Atraigo cosas hermosas</p>
 </div>
+
 </section>
 
 <!-- COMUNIDAD -->
@@ -287,38 +328,29 @@ text-decoration:none;
 <h2>Colección</h2>
 
 <div class="grid">
-
 <div class="producto">
 <img src="top-rosa.png">
-<h3>Top Pink</h3>
-<p>₡16 000</p>
+<p>Top Pink ₡16 000</p>
 <a href="https://wa.me/50660866716" class="btn">Comprar</a>
 </div>
-
-<div class="producto">
-<img src="top-blue.png">
-<h3>Top Sky</h3>
-<p>₡16 000</p>
-<a href="https://wa.me/50660866716" class="btn">Comprar</a>
-</div>
-
-<div class="producto">
-<img src="top-verde.png">
-<h3>Top Olive</h3>
-<p>₡16 000</p>
-<a href="https://wa.me/50660866716" class="btn">Comprar</a>
-</div>
-
 </div>
 
 </section>
 
 <!-- CONTACTO -->
 <section class="contacto" id="contacto">
+
 <h2>Contáctanos</h2>
 
-<a href="https://wa.me/50660866716" class="contacto-btn">WhatsApp</a>
-<a href="mailto:stephaniaquiroz9@gmail.com" class="contacto-btn">Correo</a>
+<div class="contacto-opciones">
+<a href="https://wa.me/50660866716?text=Hola quiero comprar en Step Soul" class="contacto-btn">📱 WhatsApp</a>
+<a href="mailto:stephaniaquiroz9@gmail.com" class="contacto-btn">📧 Correo</a>
+<a href="#" class="contacto-btn">📍 Costa Rica</a>
+</div>
+
+<p class="mensaje-final">
+Tu proceso es único… y estamos felices de ser parte de él ✨
+</p>
 
 </section>
 
@@ -330,7 +362,7 @@ text-decoration:none;
 <script type="module">
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getFirestore, collection, addDoc, onSnapshot, query, orderBy, deleteDoc, doc } 
+import { getFirestore, collection, addDoc, onSnapshot, query, orderBy, deleteDoc, doc, updateDoc, increment } 
 from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -351,8 +383,12 @@ window.enviarMensaje = async function(){
 let texto = document.getElementById("inputMensaje").value;
 if(texto==="") return;
 
-await addDoc(mensajesRef,{texto,fecha:Date.now()});
+await addDoc(mensajesRef,{texto,fecha:Date.now(),likes:0});
 document.getElementById("inputMensaje").value="";
+}
+
+window.darLike = async function(id){
+await updateDoc(doc(db,"mensajes",id),{likes:increment(1)});
 }
 
 window.eliminarMensaje = async function(id){
@@ -376,9 +412,11 @@ let div=document.createElement("div");
 div.className="mensaje";
 
 div.innerHTML = `
-${data.texto}
-<br>
-<button onclick="eliminarMensaje('${docSnap.id}')">Eliminar</button>
+<p>${data.texto}</p>
+<div class="acciones">
+<button onclick="darLike('${docSnap.id}')">❤️ ${data.likes || 0}</button>
+<button onclick="eliminarMensaje('${docSnap.id}')">🗑</button>
+</div>
 `;
 
 muro.appendChild(div);
